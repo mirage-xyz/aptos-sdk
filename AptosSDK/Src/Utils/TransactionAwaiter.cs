@@ -28,32 +28,23 @@ namespace Mirage.Aptos.SDK
 				try
 				{
 					transaction = await _client.GetTransactionByHash(hash);
-
-					Console.WriteLine(transaction.Type);
 					
 					if (transaction.Type == TransactionTypes.PendingTransaction)
 					{
-						Console.WriteLine("---------- 1 -----------");
 						await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken: token);
-						Console.WriteLine("---------- 2 -----------");
 					}
 					else
 					{
-						Console.WriteLine("---------- 3 -----------");
 						isPending = false;
 					}
 				}
 				catch (Exception e)
 				{
-					Console.WriteLine("---------- 4 -----------");
 					Console.WriteLine(e.Message);
 					break;
 				}
-				Console.WriteLine("---------- 5 -----------");
 			}
 			
-			Console.WriteLine("Jopa!!!!!!");
-
 			return transaction;
 		}
 

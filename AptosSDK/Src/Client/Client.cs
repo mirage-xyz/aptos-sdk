@@ -26,32 +26,6 @@ namespace Mirage.Aptos.SDK
 			_services = new ClientServices(config);
 		}
 
-		public async Task<RawTransaction> GenerateRawTransaction(Account sender, TransactionPayload payload,
-			OptionalTransactionArgs extraArgs = null)
-		{
-			var ledgerInfo = await _services.GeneralService.GetLedgerInfo();
-			var account = await _services.AccountsService.GetAccount(sender.Address);
-			var gasUnitPrice = extraArgs?.GasUnitPrice;
-			if (gasUnitPrice == null)
-			{
-				var gasEstimation = await _services.TransactionsService.EstimateGasPrice();
-				gasUnitPrice = gasEstimation.GasEstimate;
-			}
-
-			var expireTimestamp =
-				(uint)Math.Floor((double)(new DateTime().Millisecond / 1000 + DefaultTxnExpSecFromNow));
-
-			return new RawTransaction(
-				sender.PublicKey.HexToByteArray(),
-				account.SequenceNumber,
-				payload,
-				DefaultMaxGasAmount,
-				(ulong)gasUnitPrice,
-				expireTimestamp,
-				ledgerInfo.ChainID
-			);
-		}
-
 		public async Task PopulateRequestParams(
 			SubmitTransaction transaction,
 			OptionalTransactionArgs extraArgs = null

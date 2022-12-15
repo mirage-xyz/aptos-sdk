@@ -15,7 +15,7 @@ namespace Mirage.Aptos.SDK
 		{
 		}
 
-		public async Task<string> Transfer(Account from, Account to, ulong amount)
+		public async Task<PendingTransaction> Transfer(Account from, Account to, ulong amount)
 		{
 			var payload = GetPayload(to, amount);
 			var transaction = await PrepareTransaction(from, payload);
@@ -26,7 +26,7 @@ namespace Mirage.Aptos.SDK
 			
 			var receipt = await _client.SubmitTransaction(request);
 
-			return receipt.Hash;
+			return receipt;
 		}
 
 		private EntryFunctionPayload GetPayload(Account to, ulong amount)
