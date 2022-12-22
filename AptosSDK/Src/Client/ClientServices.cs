@@ -10,6 +10,7 @@ namespace Mirage.Aptos.SDK
 		public readonly TransactionsService TransactionsService;
 		public readonly GeneralService GeneralService;
 		public readonly AccountsService AccountsService;
+		public readonly TableService TableService;
 
 		protected static OpenAPIConfig EnhanceConfig(OpenAPIConfig config)
 		{
@@ -32,6 +33,7 @@ namespace Mirage.Aptos.SDK
 			TransactionsService = new TransactionsService(config);
 			GeneralService = new GeneralService(config);
 			AccountsService = new AccountsService(config);
+			TableService = new TableService(config);
 		}
 	}
 }

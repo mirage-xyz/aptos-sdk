@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Mirage.Aptos.SDK;
+using Mirage.Aptos.SDK.DTO;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
@@ -16,6 +17,12 @@ namespace AptosSDKTest
 		private Client _client;
 		private FaucetClient _faucetClient;
 		private TokenClient _tokenClient;
+		private Account _from;
+		private Account _to;
+		
+		private string _collectionName = "Mirage Aptos SDK";
+		private string _tokenName = "Mirages's first token";
+		private long _tokenPropertyVersion = 0;
 		
 		[OneTimeSetUp]
 		public void SetUp()
@@ -23,82 +30,110 @@ namespace AptosSDKTest
 			_client = new Client(NodeUrl);
 			_faucetClient = new FaucetClient(FaucetUrl, _client);
 			_tokenClient = new TokenClient(_client);
+			
+			_from = new Account();
+			_to = new Account();
+		}
+
+		[Test, Order(1)]
+		public async Task FundAccounts()
+		{
+			await _faucetClient.FundAccount(_from, TopUpAmount);
+			await _faucetClient.FundAccount(_to, TopUpAmount);
+		}
+
+		[Test, Order(2)]
+		public async Task CreateCollection()
+		{
+			var description = "Collection for test Aptos SDK";
+			var uri = "https://mirage.xyz/";
+
+			var transaction = await _tokenClient.CreateCollection(_from, _collectionName, description, uri);
+			Console.WriteLine(transaction.Hash);
+			
+			await RequestMinedTransaction(transaction.Hash);
+
+			var collectionData = await _tokenClient.GetCollectionData(_from.Address, _collectionName);
+			
+			Console.WriteLine(JsonConvert.SerializeObject(collectionData));
+		}
+
+		[Test, Order(3)]
+		public async Task CreateToken()
+		{
+			var tokenDescription = "Mirages's simple token";
+			var transaction = await _tokenClient.CreateToken(
+				_from,
+				_collectionName,
+				_tokenName,
+				tokenDescription,
+				1,
+				"https://mirage.xyz/_next/static/videos/video-desktop-8511e2ee740953e08e74b95f401399f7.webm"
+			);
+			
+			await RequestMinedTransaction(transaction.Hash);
+
+			var tokenData = await _tokenClient.GetTokenData(_from.Address, _collectionName, _tokenName);
+			
+			Console.WriteLine(JsonConvert.SerializeObject(tokenData));
+		}
+
+		[Test, Order(4)]
+		public async Task OfferToken()
+		{
+			var transaction = await _tokenClient.OfferToken(
+				_from,
+				_to.Address,
+				_from.Address,
+				_collectionName,
+				_tokenName,
+				1,
+				_tokenPropertyVersion
+			);
+			
+			Console.WriteLine(transaction.Hash);
+			
+			await RequestMinedTransaction(transaction.Hash);
+			
+			await ShowAccountsBalances();
+		}
+
+		[Test, Order(5)]
+		public async Task ClaimToken()
+		{
+			var transaction = await _tokenClient.ClaimToken(
+				_to,
+				_from.Address,
+				_from.Address,
+				_collectionName,
+				_tokenName,
+				_tokenPropertyVersion
+			);
+			
+			Console.WriteLine(transaction.Hash);
+			await RequestMinedTransaction(transaction.Hash);
+
+			await ShowAccountsBalances();
+		}
+
+		private async Task ShowAccountsBalances()
+		{
+			var fromTokenBalance = await _tokenClient.GetToken(_from.Address, _collectionName, _tokenName, _tokenPropertyVersion);
+			var toTokenBalance = await _tokenClient.GetToken(_to.Address, _collectionName, _tokenName, _tokenPropertyVersion);
+			Console.WriteLine("From balance: " + fromTokenBalance.Amount);
+			Console.WriteLine("To balance: " + toTokenBalance.Amount);
 		}
 		
-		public async Task RequestTransaction(string hash)
+		private async Task RequestTransaction(string hash)
 		{
 			var tx = await _client.GetTransactionByHash(hash);
 			// Console.WriteLine(JsonConvert.SerializeObject(tx));
 		}
 		
-		public async Task RequestMinedTransaction(string hash)
+		private Task<TypedTransaction> RequestMinedTransaction(string hash)
 		{
 			var awaiter = new TransactionAwaiter(_client);
-			var transaction = await awaiter.WaitForTransactionWithResult(hash);
-			Console.WriteLine(JsonConvert.SerializeObject(transaction));
-		}
-
-		[Test]
-		public async Task CreateCollection()
-		{
-			var from = new Account();
-			var to = new Account();
-			
-			await _faucetClient.FundAccount(from, TopUpAmount);
-			await _faucetClient.FundAccount(to, TopUpAmount);
-			
-			Console.WriteLine("----- Create collection -----");
-			var collectionName = "Mirage Aptos SDK 4";
-			var description = "Collection for test Aptos SDK";
-			var uri = "https://mirage.xyz/";
-
-			var hash = await _tokenClient.CreateCollection(from, collectionName, description, uri);
-			Console.WriteLine(hash.Hash);
-			
-			await RequestTransaction(hash.Hash);
-
-			Console.WriteLine("----- Create token -----");
-			var tokenName = "Mirages's first token";
-			var tokenDescription = "Mirages's simple token";
-			var hash1 = await _tokenClient.CreateToken(
-				from,
-				collectionName,
-				tokenName,
-				description,
-				1,
-				"https://mirage.xyz/_next/static/videos/video-desktop-8511e2ee740953e08e74b95f401399f7.webm"
-			);
-			
-			Console.WriteLine(hash1.Hash);
-			await RequestTransaction(hash1.Hash);
-
-			Console.WriteLine("----- Offer token -----");
-			var tokenPropertyVersion = 0;
-			var hash3 = await _tokenClient.OfferToken(
-				from,
-				to.Address,
-				from.Address,
-				collectionName,
-				tokenName,
-				1,
-				tokenPropertyVersion
-			);
-			
-			Console.WriteLine(hash3.Hash);
-			await RequestTransaction(hash3.Hash);
-
-			Console.WriteLine("----- Claim token -----");
-			var hash4 = await _tokenClient.ClaimToken(
-				to,
-				from.Address,
-				from.Address,
-				collectionName,
-				tokenName,
-				tokenPropertyVersion
-			);
-			
-			Console.WriteLine(hash4.Hash);
-			await RequestTransaction(hash4.Hash);
+			return awaiter.WaitForTransactionWithResult(hash);
 		}
 	}
 }

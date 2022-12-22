@@ -11,10 +11,22 @@ namespace Mirage.Aptos.SDK
 	{
 		private const string AptosCoinType = "0x1::aptos_coin::AptosCoin";
 
+		/// <summary>
+		/// Creates new CoinClient instance
+		/// </summary>
+		/// <param name="client"><see cref="Client"/> instance.</param>
 		public CoinClient(Client client) : base(client, ABIs.GetCoinABIs())
 		{
 		}
 
+		/// <summary>
+		/// Generate, sign, and submit a transaction to the Aptos blockchain API to
+		/// transfer AptosCoin from one account to another.
+		/// </summary>
+		/// <param name="from">Account sending the coins.</param>
+		/// <param name="to">Account to receive the coins.</param>
+		/// <param name="amount">Number of coins to transfer.</param>
+		/// <returns>The transaction submitted to the API.</returns>
 		public async Task<PendingTransaction> Transfer(Account from, Account to, ulong amount)
 		{
 			var payload = GetPayload(to, amount);
@@ -28,6 +40,20 @@ namespace Mirage.Aptos.SDK
 
 			return receipt;
 		}
+		
+		/// <summary>
+		/// Get amount of AptosCoin on given account.
+		/// </summary>
+		/// <param name="account">Account that you want to check the balance of.</param>
+		/// <returns>Task with the balance as a <see cref="BigInteger"/>.</returns>
+		public async Task<BigInteger> GetBalance(Account account)
+		{
+			var resource = await _client.GetAccountResource(account.Address, ResourcesTypes.AptosCoin);
+
+			var data = resource.Data.ToObject<CoinStoreType>();
+
+			return BigInteger.Parse(data.Coin.Value);
+		}
 
 		private EntryFunctionPayload GetPayload(Account to, ulong amount)
 		{
@@ -38,16 +64,6 @@ namespace Mirage.Aptos.SDK
 				TypeArguments = new string[] { AptosCoinType },
 				Arguments = new string[] { to.Address, amount.ToString() }
 			};
-		}
-
-		public async Task<BigInteger> GetBalance(Account account)
-		{
-			var typeTag = $"0x1::coin::CoinStore<{AptosCoinType}>";
-			var resource = await _client.GetAccountResource(account, typeTag);
-
-			var data = resource.Data.ToObject<CoinStoreType>();
-
-			return BigInteger.Parse(data.Coin.Value);
 		}
 	}
 }

@@ -1,0 +1,10 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
+  &lt;Assembly Path="/Users/kirill/RiderProjects/aptos-sdk/AptosSDK/Libs/DLLs/Mirage.AptosSerializationCore.dll" /&gt;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=499ce427_002Da211_002D4049_002Dae87_002De71404968f04/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CoinClientTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::09469E09-090C-4845-9111-05D953C8906C::.NETCoreApp,Version=v3.1::AptosSDKTest.TokenClientIntegrationTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::09469E09-090C-4845-9111-05D953C8906C::.NETCoreApp,Version=v3.1::AptosSDKTest.CoinClientIntegrationTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

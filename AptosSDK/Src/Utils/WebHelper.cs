@@ -34,38 +34,7 @@ namespace Mirage.Aptos.SDK
 		{
 			return SendChangeRequest<TResultType>(url, string.Empty, headers, query);
 		}
-
-		public static async Task<TResultType> SendChangeRequest<TResultType>(
-			string url,
-			string payload,
-			Dictionary<string, string> headers = null,
-			Dictionary<string, string> query = null
-		)
-		{
-			var content = new StringContent(payload);
-			content.Headers.ContentType = new MediaTypeHeaderValue(MimeType);
-
-			using (var client = new HttpClient())
-			{
-				if (headers != null)
-				{
-					AddHeaders(client, headers);
-				}
-				
-				if (query != null)
-				{
-					url = BuildURL(url, query);
-				}
-
-				client.Timeout = TimeSpan.FromSeconds(20);
-
-				var answer = await client.PostAsync(url, content);
-				var stream = await answer.Content.ReadAsStreamAsync();
-				
-				return ParseAnswer<TResultType>(stream, answer.IsSuccessStatusCode);
-			}
-		}
-
+		
 		public static async Task<TResultType> SendGetRequest<TResultType>(
 			string url,
 			Dictionary<string, string> headers = null,
@@ -86,22 +55,107 @@ namespace Mirage.Aptos.SDK
 				}
 
 				request.Timeout = TimeSpan.FromSeconds(20);
-
-				var answer = await request.GetAsync(url);
-				var stream = await answer.Content.ReadAsStreamAsync();
 				
-				return ParseAnswer<TResultType>(stream, answer.IsSuccessStatusCode);
+				var answer = await request.GetAsync(url);
+
+				var retValue = await ParseAnswer<TResultType>(answer, wrapper);
+				
+				return retValue;
 			}
 		}
 
-		private static TResultType ParseAnswer<TResultType>(Stream stream, bool IsSuccessStatusCode)
+		private static async Task<TResultType> SendChangeRequest<TResultType>(
+			string url,
+			string payload,
+			Dictionary<string, string> headers = null,
+			Dictionary<string, string> query = null,
+			string wrapper = null
+		)
 		{
-			var streamReader = new StreamReader(stream); 
+			var content = new StringContent(payload);
+			content.Headers.ContentType = new MediaTypeHeaderValue(MimeType);
+
+			using (var client = new HttpClient())
+			{
+				if (headers != null)
+				{
+					AddHeaders(client, headers);
+				}
+
+				if (query != null)
+				{
+					url = BuildURL(url, query);
+				}
+
+				client.Timeout = TimeSpan.FromSeconds(20);
+
+				var answer = await client.PostAsync(url, content);
+
+				var retValue = await ParseAnswer<TResultType>(answer, wrapper);
+				
+				return retValue;
+			}
+		}
+
+		private static Task<TResultType> ParseAnswer<TResultType>(HttpResponseMessage answer, string wrapper = null)
+		{
+			if (wrapper != null)
+			{
+				return ParseStringAnswer<TResultType>(answer, wrapper);
+			}
+			else
+			{
+				return ParseStreamAnswer<TResultType>(answer);
+			}
+		}
+		
+		private static async Task<TResultType> ParseStringAnswer<TResultType>(HttpResponseMessage answer, string wrapper)
+		{
+			var json = await answer.Content.ReadAsStringAsync();
+			if (answer.IsSuccessStatusCode)
+			{
+				try
+				{
+					var jsonPayload = json;
+					if (wrapper != null)
+					{
+						jsonPayload = string.Format(wrapper, json);
+					}
+
+					var result = JsonConvert.DeserializeObject<TResultType>(jsonPayload);
+					return result;
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine($"Error while deserializing response: {e.Message}");
+					throw e;
+				}
+			}
+			else
+			{
+				if (string.IsNullOrEmpty(json))
+				{
+					throw new InvalidOperationException("Unexpected exception: " + json);
+				}
+				else
+				{
+					var error = JsonConvert.DeserializeObject<Error>(json);
+					Console.WriteLine(AptosException.CreateMessage(error.Message, error.ErrorCode,
+						error.VmErrorCode));
+					throw new AptosException(error.Message, error.ErrorCode, error.VmErrorCode);
+				}
+			}
+		}
+		
+		private static async Task<TResultType> ParseStreamAnswer<TResultType>(HttpResponseMessage answer)
+		{
+			var stream = await answer.Content.ReadAsStreamAsync();
+			var streamReader = new StreamReader(stream);
 			var jsonReader = new JsonTextReader(streamReader);
-				
+
 			JsonSerializer serializer = new JsonSerializer();
-				
-			if (IsSuccessStatusCode)
+
+			if (answer.IsSuccessStatusCode)
 			{
 				try
 				{
@@ -115,17 +169,15 @@ namespace Mirage.Aptos.SDK
 			}
 			else
 			{
-				if (streamReader.Peek() != -1)
+				if (streamReader.Peek() == -1)
 				{
-					throw new InvalidOperationException("Some fucking bug.");
+					throw new InvalidOperationException("Unexpected exception: " + streamReader.ReadToEnd());
 				}
-				else
-				{
-					var error = serializer.Deserialize<Error>(jsonReader);
-					Console.WriteLine(AptosException.CreateMessage(error.Message, error.ErrorCode,
-						error.VmErrorCode));
-					throw new AptosException(error.Message, error.ErrorCode, error.VmErrorCode);
-				}
+
+				var error = serializer.Deserialize<Error>(jsonReader);
+				Console.WriteLine(AptosException.CreateMessage(error.Message, error.ErrorCode,
+					error.VmErrorCode));
+				throw new AptosException(error.Message, error.ErrorCode, error.VmErrorCode);
 			}
 		}
 

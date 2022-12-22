@@ -1,12 +1,15 @@
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Mirage.Aptos.SDK.DTO;
-using Mirage.Aptos.Imlementation.ABI;
-using Mirage.Aptos.Utils;
-using TransactionPayload = Mirage.Aptos.Imlementation.ABI.TransactionPayload;
+using Newtonsoft.Json;
 
 namespace Mirage.Aptos.SDK
 {
+	/// <summary>
+	/// Provides methods for retrieving data from Aptos node.
+	/// </summary>
+	/// <seealso href="https://fullnode.devnet.aptoslabs.com/v1/spec"/>
 	public class Client
 	{
 		private const int DefaultMaxGasAmount = 200000;
@@ -14,6 +17,11 @@ namespace Mirage.Aptos.SDK
 
 		private readonly ClientServices _services;
 
+		/// <summary>
+		/// Build a client configured to connect to an Aptos node at the given URL.
+		/// </summary>
+		/// <param name="nodeUrl">URL of the Aptos Node API endpoint.</param>
+		/// <param name="config">Additional configuration options for the generated Axios client.</param>
 		public Client(string nodeUrl, OpenAPIConfig config = null)
 		{
 			if (config == null)
@@ -61,9 +69,14 @@ namespace Mirage.Aptos.SDK
 			return _services.TransactionsService.GetTransactionByHash(hash);
 		}
 
-		public Task<MoveResource> GetAccountResource(Account account, string resourceType)
+		public Task<MoveResource> GetAccountResource(string account, string resourceType)
 		{
-			return _services.AccountsService.GetAccountResource(account.Address, resourceType);
+			return _services.AccountsService.GetAccountResource(account, resourceType);
+		}
+		
+		public Task<TReturn> GetTableItem<TReturn>(string tableHandle, TableItemRequest requestBody)
+		{
+			return _services.TableService.GetTableItem<TReturn>(tableHandle, requestBody);
 		}
 	}
 }
