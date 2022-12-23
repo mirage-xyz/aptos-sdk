@@ -1,8 +1,7 @@
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Mirage.Aptos.SDK.DTO;
-using Newtonsoft.Json;
+using Mirage.Aptos.SDK.DTO.ResponsePayloads;
 
 namespace Mirage.Aptos.SDK
 {
@@ -63,6 +62,21 @@ namespace Mirage.Aptos.SDK
 		{
 			return _services.TransactionsService.SubmitTransaction(request);
 		}
+		
+		public Task<Transaction_UserTransaction> SimulateTransaction(
+			SubmitTransactionRequest requestBody,
+			bool? estimateMaxGasAmount = null,
+			bool? estimateGasUnitPrice = null,
+			bool? estimatePrioritizedGasUnitPrice = null
+		)
+		{
+			return _services.TransactionsService.SimulateTransaction(
+				requestBody,
+				estimateMaxGasAmount,
+				estimateGasUnitPrice,
+				estimatePrioritizedGasUnitPrice
+			);
+		}
 
 		public Task<TypedTransaction> GetTransactionByHash(string hash)
 		{
@@ -73,10 +87,42 @@ namespace Mirage.Aptos.SDK
 		{
 			return _services.AccountsService.GetAccountResource(account, resourceType);
 		}
-		
+
 		public Task<TReturn> GetTableItem<TReturn>(string tableHandle, TableItemRequest requestBody)
 		{
 			return _services.TableService.GetTableItem<TReturn>(tableHandle, requestBody);
+		}
+
+		public Task<VersionedEvent> GetEventsByCreationNumber(
+			string address,
+			ulong creationNumber,
+			ulong? start = null,
+			ulong? limit = null
+		)
+		{
+			return _services.EventsService.GetEventsByCreationNumber(
+				address,
+				creationNumber,
+				start,
+				limit
+			);
+		}
+
+		public Task<VersionedEvent> GetEventsByEventHandle(
+			string address,
+			string eventHandle,
+			string fieldName,
+			ulong? start = null,
+			ulong? limit = null
+		)
+		{
+			return _services.EventsService.GetEventsByEventHandle(
+				address,
+				eventHandle,
+				fieldName,
+				start,
+				limit
+			);
 		}
 	}
 }

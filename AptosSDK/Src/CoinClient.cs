@@ -29,18 +29,18 @@ namespace Mirage.Aptos.SDK
 		/// <returns>The transaction submitted to the API.</returns>
 		public async Task<PendingTransaction> Transfer(Account from, Account to, ulong amount)
 		{
-			var payload = GetPayload(to, amount);
-			var transaction = await PrepareTransaction(from, payload);
-
-			var raw = transaction.GetRaw();
-			var signature = _signatureBuilder.GetSignature(from, raw);
-			var request = transaction.GetRequest(payload, signature);
-			
+			var request = await CreateTransaction(from, to, amount);
 			var receipt = await _client.SubmitTransaction(request);
-
 			return receipt;
 		}
 		
+		public async Task<Transaction_UserTransaction> SimulateTransfer(Account from, Account to, ulong amount)
+		{
+			var request = await CreateTransaction(from, to, amount);
+			var receipt = await _client.SimulateTransaction(request);
+			return receipt;
+		}
+
 		/// <summary>
 		/// Get amount of AptosCoin on given account.
 		/// </summary>
@@ -53,6 +53,18 @@ namespace Mirage.Aptos.SDK
 			var data = resource.Data.ToObject<CoinStoreType>();
 
 			return BigInteger.Parse(data.Coin.Value);
+		}
+		
+		private async Task<SubmitTransactionRequest> CreateTransaction(Account from, Account to, ulong amount)
+		{
+			var payload = GetPayload(to, amount);
+			var transaction = await PrepareTransaction(from, payload);
+
+			var raw = transaction.GetRaw();
+			var signature = _signatureBuilder.GetSignature(from, raw);
+			var request = transaction.GetRequest(payload, signature);
+
+			return request;
 		}
 
 		private EntryFunctionPayload GetPayload(Account to, ulong amount)

@@ -30,7 +30,7 @@ namespace AptosSDKTest
 			_bobAccount = new Account();
 		}
 
-		[Test]
+		[Test, Order(1)]
 		public async Task TopUpAccount()
 		{
 			var account = new Account();
@@ -44,7 +44,7 @@ namespace AptosSDKTest
 			Assert.AreEqual(balance1 + TopUpAmount, balance2);
 		}
 
-		[Test]
+		[Test, Order(2)]
 		public async Task SignTransaction()
 		{
 			Console.WriteLine("------ Accounts -------");
