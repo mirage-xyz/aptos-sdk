@@ -40,20 +40,12 @@ namespace Mirage.Aptos.SDK
 		{
 			var ledgerInfo = await _services.GeneralService.GetLedgerInfo();
 			var account = await _services.AccountsService.GetAccount(transaction.Sender.Address);
-			var gasUnitPrice = extraArgs?.GasUnitPrice;
-			if (gasUnitPrice == null)
-			{
-				var gasEstimation = await _services.TransactionsService.EstimateGasPrice();
-				gasUnitPrice = gasEstimation.GasEstimate;
-			}
-
-			var expireTimestamp =
-				(uint)Math.Floor((double)(DateTimeOffset.Now.ToUnixTimeMilliseconds() / 1000 +
-				                          DefaultTxnExpSecFromNow));
+			var gasUnitPrice = await GetGasUnitPrice(extraArgs);
+			var expireTimestamp = GetExpireTimeStamp();
 
 			transaction.SequenceNumber = account.SequenceNumber;
 			transaction.MaxGasAmount = DefaultMaxGasAmount;
-			transaction.GasUnitPrice = (ulong)gasUnitPrice;
+			transaction.GasUnitPrice = gasUnitPrice;
 			transaction.ExpirationTimestampSecs = expireTimestamp;
 			transaction.ChainID = ledgerInfo.ChainID;
 		}
@@ -62,7 +54,7 @@ namespace Mirage.Aptos.SDK
 		{
 			return _services.TransactionsService.SubmitTransaction(request);
 		}
-		
+
 		public Task<Transaction_UserTransaction> SimulateTransaction(
 			SubmitTransactionRequest requestBody,
 			bool? estimateMaxGasAmount = null,
@@ -123,6 +115,24 @@ namespace Mirage.Aptos.SDK
 				start,
 				limit
 			);
+		}
+
+		private async Task<ulong> GetGasUnitPrice(OptionalTransactionArgs extraArgs = null)
+		{
+			var gasUnitPrice = extraArgs?.GasUnitPrice;
+			if (gasUnitPrice == null)
+			{
+				var gasEstimation = await _services.TransactionsService.EstimateGasPrice();
+				gasUnitPrice = gasEstimation.GasEstimate;
+			}
+
+			return (ulong)gasUnitPrice;
+		}
+
+		private uint GetExpireTimeStamp()
+		{
+			return (uint)Math.Floor((double)(DateTimeOffset.Now.ToUnixTimeMilliseconds() / 1000 +
+			                                 DefaultTxnExpSecFromNow));
 		}
 	}
 }

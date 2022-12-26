@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AnkrSDK.Runtime.Aptos.DTO.RequestsPayloads.ChageTypes
 {
@@ -6,12 +7,12 @@ namespace AnkrSDK.Runtime.Aptos.DTO.RequestsPayloads.ChageTypes
 	{
 		[JsonProperty(PropertyName = "key")]
 		// TODO Implement value deserialization
-		public object Key;
+		public JObject Key;
 		[JsonProperty(PropertyName = "key_type")]
 		public string KeyType;
 		[JsonProperty(PropertyName = "value")]
 		// TODO Implement value deserialization
-		public object Value;
+		public JObject Value;
 		[JsonProperty(PropertyName = "value_type")]
 		public string ValueType;
 	}

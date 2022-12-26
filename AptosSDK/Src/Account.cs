@@ -7,10 +7,10 @@ namespace Mirage.Aptos.SDK
 	public class Account
 	{
 		private const byte AddressEnding = 0x00;
-		
+
 		private byte[] _publicKey;
 		private byte[] _privateKey;
-		
+
 		public readonly string Address;
 		public readonly string PublicKey;
 
@@ -30,19 +30,6 @@ namespace Mirage.Aptos.SDK
 			PublicKey = _publicKey.ToHex(true);
 		}
 
-		private static byte[] GenerateRandomSeed()
-		{
-			byte[] bytes = new byte[Ed25519.PrivateKeySeedSizeInBytes];
-			RandomUtils.GetBytes(bytes);
-			return bytes;
-		}
-
-		private void CreateKeyPairFromSeed(byte[] seed)
-		{
-			_privateKey = Ed25519.ExpandedPrivateKeyFromSeed(seed);
-			_publicKey = Ed25519.PublicKeyFromSeed(seed);
-		}
-
 		public string GetAddress()
 		{
 			var digest = new Sha3Digest();
@@ -56,6 +43,19 @@ namespace Mirage.Aptos.SDK
 		public byte[] Sign(byte[] message)
 		{
 			return Ed25519.Sign(message, _privateKey);
+		}
+
+		private static byte[] GenerateRandomSeed()
+		{
+			byte[] bytes = new byte[Ed25519.PrivateKeySeedSizeInBytes];
+			RandomUtils.GetBytes(bytes);
+			return bytes;
+		}
+
+		private void CreateKeyPairFromSeed(byte[] seed)
+		{
+			_privateKey = Ed25519.ExpandedPrivateKeyFromSeed(seed);
+			_publicKey = Ed25519.PublicKeyFromSeed(seed);
 		}
 	}
 }

@@ -8,6 +8,7 @@ namespace Mirage.Aptos.SDK
 {
 	public class TransactionAwaiter
 	{
+		private readonly TimeSpan _oneSecondDelay = TimeSpan.FromSeconds(1);
 		private readonly CancellationTokenSource _cancellationTokenSource;
 		private readonly Client _client;
 
@@ -30,7 +31,7 @@ namespace Mirage.Aptos.SDK
 					
 					if (transaction.Type == TransactionTypes.PendingTransaction)
 					{
-						await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken: token);
+						await Task.Delay(_oneSecondDelay, cancellationToken: token);
 					}
 					else
 					{

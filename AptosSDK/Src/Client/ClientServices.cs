@@ -5,8 +5,10 @@ namespace Mirage.Aptos.SDK
 {
 	public class ClientServices
 	{
+		private const string DefaultBase = "https://fullnode.devnet.aptoslabs.com";
+
 		private OpenAPIConfig _config;
-		
+
 		public readonly TransactionsService TransactionsService;
 		public readonly GeneralService GeneralService;
 		public readonly AccountsService AccountsService;
@@ -17,7 +19,7 @@ namespace Mirage.Aptos.SDK
 		{
 			return new OpenAPIConfig
 			{
-				Base = config.Base ?? "https://fullnode.devnet.aptoslabs.com",
+				Base = config.Base ?? DefaultBase,
 				Version = config.Version ?? "v1",
 				WithCredentials = config.WithCredentials ?? false,
 				Credentials = config.Credentials ?? "include",
@@ -27,7 +29,7 @@ namespace Mirage.Aptos.SDK
 				Headers = config.Headers
 			};
 		}
-		
+
 		public ClientServices(OpenAPIConfig config)
 		{
 			config = EnhanceConfig(config);

@@ -46,9 +46,7 @@ namespace Mirage.Aptos.SDK
 					{ name, description, uri, maxAmount.ToString(), new bool[] { false, false, false } }
 			};
 
-			var receipt = await GenerateSignSubmitTransaction(account, payload, extraArgs);
-
-			return receipt;
+			return await GenerateSignSubmitTransaction(account, payload, extraArgs);
 		}
 
 		/// <summary>
@@ -102,9 +100,7 @@ namespace Mirage.Aptos.SDK
 				propertyTypes
 			);
 
-			var receipt = await GenerateSignSubmitTransaction(account, payload, extraArgs);
-
-			return receipt;
+			return await GenerateSignSubmitTransaction(account, payload, extraArgs);
 		}
 
 		private EntryFunctionPayload CreateTokenPayload(
@@ -179,7 +175,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="propertyVersion">The version of token PropertyMap with a default value 0.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public async Task<PendingTransaction> OfferToken(
+		public Task<PendingTransaction> OfferToken(
 			Account account,
 			string receiver,
 			string creator,
@@ -199,9 +195,7 @@ namespace Mirage.Aptos.SDK
 					{ receiver, creator, collectionName, name, propertyVersion.ToString(), amount.ToString() }
 			};
 
-			var receipt = await GenerateSignSubmitTransaction(account, payload, extraArgs);
-
-			return receipt;
+			return GenerateSignSubmitTransaction(account, payload, extraArgs);
 		}
 
 		/// <summary>
@@ -215,7 +209,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="propertyVersion">The version of token PropertyMap with a default value 0.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public async Task<PendingTransaction> ClaimToken(
+		public Task<PendingTransaction> ClaimToken(
 			Account account,
 			string sender,
 			string creator,
@@ -234,9 +228,7 @@ namespace Mirage.Aptos.SDK
 					{ sender, creator, collectionName, name, propertyVersion.ToString() }
 			};
 
-			var receipt = await GenerateSignSubmitTransaction(account, payload, extraArgs);
-
-			return receipt;
+			return GenerateSignSubmitTransaction(account, payload, extraArgs);
 		}
 
 		public async Task<CollectionPayload> GetCollectionData(string creator, string collectionName)
@@ -254,7 +246,7 @@ namespace Mirage.Aptos.SDK
 
 			return await _client.GetTableItem<CollectionPayload>(handle, request);
 		}
-		
+
 		public async Task<TokenPayload> GetTokenData(string creator, string collectionName, string tokenName)
 		{
 			var collections = await _client.GetAccountResource(creator, ResourcesTypes.Collections);
@@ -273,7 +265,9 @@ namespace Mirage.Aptos.SDK
 				}
 			};
 
-			return await _client.GetTableItem<TokenPayload>(handle, request);
+			var tableItem = await _client.GetTableItem<TokenPayload>(handle, request);
+
+			return tableItem;
 		}
 
 		public Task<TokenFromAccount> GetToken(
@@ -281,7 +275,7 @@ namespace Mirage.Aptos.SDK
 			string collectionName,
 			string tokenName,
 			long propertyVersion
-			)
+		)
 		{
 			var tokenId = new TokenId
 			{
@@ -314,14 +308,14 @@ namespace Mirage.Aptos.SDK
 			}
 
 			var handle = collectionData.Tokens.Handle;
-			
+
 			var request = new TableItemRequest
 			{
 				KeyType = KeyTypes.TokenId,
 				ValueType = ValueTypes.Token,
 				Key = tokenId
 			};
-			
+
 			try
 			{
 				return await _client.GetTableItem<TokenFromAccount>(handle, request);
@@ -346,7 +340,7 @@ namespace Mirage.Aptos.SDK
 				Amount = "0"
 			};
 		}
-		
+
 		private async Task<PendingTransaction> GenerateSignSubmitTransaction(
 			Account account,
 			EntryFunctionPayload payload,
