@@ -27,7 +27,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="to">Account to receive the coins.</param>
 		/// <param name="amount">Number of coins to transfer.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public async Task<PendingTransaction> Transfer(Account from, Account to, ulong amount)
+		public async Task<PendingTransactionPayload> Transfer(Account from, Account to, ulong amount)
 		{
 			var request = await CreateTransaction(from, to, amount);
 			var receipt = await _client.SubmitTransaction(request);
@@ -35,7 +35,7 @@ namespace Mirage.Aptos.SDK
 		}
 		
 		
-		public async Task<Transaction_UserTransaction> SimulateTransfer(Account from, Account to, ulong amount)
+		public async Task<UserTransaction> SimulateTransfer(Account from, Account to, ulong amount)
 		{
 			var request = await CreateTransaction(from, to, amount);
 			var receipt = await _client.SimulateTransaction(request);

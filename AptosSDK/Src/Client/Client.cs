@@ -50,12 +50,12 @@ namespace Mirage.Aptos.SDK
 			transaction.ChainID = ledgerInfo.ChainID;
 		}
 
-		public Task<PendingTransaction> SubmitTransaction(SubmitTransactionRequest request)
+		public Task<PendingTransactionPayload> SubmitTransaction(SubmitTransactionRequest request)
 		{
 			return _services.TransactionsService.SubmitTransaction(request);
 		}
 
-		public Task<Transaction_UserTransaction> SimulateTransaction(
+		public Task<UserTransaction> SimulateTransaction(
 			SubmitTransactionRequest requestBody,
 			bool? estimateMaxGasAmount = null,
 			bool? estimateGasUnitPrice = null,

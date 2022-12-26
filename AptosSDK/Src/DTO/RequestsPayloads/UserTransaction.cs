@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Mirage.Aptos.SDK.DTO
 {
-	public class Transaction_UserTransaction : TypedTransaction
+	public class UserTransaction : TypedTransaction
 	{
 		[JsonProperty(PropertyName = "version")]
 		public string Version;

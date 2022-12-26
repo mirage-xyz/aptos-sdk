@@ -21,9 +21,9 @@ namespace Mirage.Aptos.SDK.Services
 		{
 		}
 
-		public Task<PendingTransaction> SubmitTransaction(SubmitTransactionRequest requestBody)
+		public Task<PendingTransactionPayload> SubmitTransaction(SubmitTransactionRequest requestBody)
 		{
-			return WebHelper.SendPostRequest<SubmitTransactionRequest, PendingTransaction>(URL + SubmitTransactionRoute,
+			return WebHelper.SendPostRequest<SubmitTransactionRequest, PendingTransactionPayload>(URL + SubmitTransactionRoute,
 				requestBody);
 		}
 
@@ -39,7 +39,7 @@ namespace Mirage.Aptos.SDK.Services
 			return WebHelper.SendGetRequest<GasEstimation>(URL + EstimateGasPriceRoute);
 		}
 
-		public Task<Transaction_UserTransaction> SimulateTransaction(
+		public Task<UserTransaction> SimulateTransaction(
 			SubmitTransactionRequest requestBody,
 			bool? estimateMaxGasAmount,
 			bool? estimateGasUnitPrice,
@@ -63,7 +63,7 @@ namespace Mirage.Aptos.SDK.Services
 				query.Add(EstimatePrioritizedGasUnitPriceField, estimatePrioritizedGasUnitPrice.ToString());
 			}
 
-			return WebHelper.SendPostRequest<SubmitTransactionRequest, Transaction_UserTransaction>(
+			return WebHelper.SendPostRequest<SubmitTransactionRequest, UserTransaction>(
 				URL + SimulateTransactionRoute, requestBody, query: query);
 		}
 	}

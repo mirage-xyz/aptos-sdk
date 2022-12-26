@@ -34,11 +34,11 @@ namespace Mirage.Aptos.SDK.Converters
 			switch (type)
 			{
 				case TransactionTypes.UserTransaction:
-					return jsonObj.ToObject<Transaction_UserTransaction>(serializer);
+					return jsonObj.ToObject<UserTransaction>(serializer);
 				case TransactionTypes.GenesisTransaction:
 					return jsonObj.ToObject<GenesisTransaction>(serializer);
 				case TransactionTypes.PendingTransaction:
-					return jsonObj.ToObject<Transaction_PendingTransaction>(serializer);
+					return jsonObj.ToObject<PendingTransaction>(serializer);
 				case TransactionTypes.BlockMetadataTransaction:
 					return jsonObj.ToObject<BlockMetadataTransaction>(serializer);
 				case TransactionTypes.StateCheckpointTransaction:

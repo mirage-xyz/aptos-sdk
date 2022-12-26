@@ -28,7 +28,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="maxAmount">Maximum number of `token_data` allowed within this collection.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public async Task<PendingTransaction> CreateCollection(
+		public async Task<PendingTransactionPayload> CreateCollection(
 			Account account,
 			string name,
 			string description,
@@ -67,7 +67,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="propertyTypes">The type of property values.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public async Task<PendingTransaction> CreateToken(
+		public async Task<PendingTransactionPayload> CreateToken(
 			Account account,
 			string collectionName,
 			string name,
@@ -175,7 +175,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="propertyVersion">The version of token PropertyMap with a default value 0.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public Task<PendingTransaction> OfferToken(
+		public Task<PendingTransactionPayload> OfferToken(
 			Account account,
 			string receiver,
 			string creator,
@@ -209,7 +209,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="propertyVersion">The version of token PropertyMap with a default value 0.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public Task<PendingTransaction> ClaimToken(
+		public Task<PendingTransactionPayload> ClaimToken(
 			Account account,
 			string sender,
 			string creator,
@@ -341,7 +341,7 @@ namespace Mirage.Aptos.SDK
 			};
 		}
 
-		private async Task<PendingTransaction> GenerateSignSubmitTransaction(
+		private async Task<PendingTransactionPayload> GenerateSignSubmitTransaction(
 			Account account,
 			EntryFunctionPayload payload,
 			OptionalTransactionArgs extraArgs = null
