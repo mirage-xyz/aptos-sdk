@@ -28,7 +28,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="maxAmount">Maximum number of `token_data` allowed within this collection.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public async Task<PendingTransactionPayload> CreateCollection(
+		public Task<PendingTransactionPayload> CreateCollection(
 			Account account,
 			string name,
 			string description,
@@ -46,7 +46,7 @@ namespace Mirage.Aptos.SDK
 					{ name, description, uri, maxAmount.ToString(), new bool[] { false, false, false } }
 			};
 
-			return await GenerateSignSubmitTransaction(account, payload, extraArgs);
+			return GenerateSignSubmitTransaction(account, payload, extraArgs);
 		}
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace Mirage.Aptos.SDK
 		/// <param name="propertyTypes">The type of property values.</param>
 		/// <param name="extraArgs">Extra args for checking the balance.</param>
 		/// <returns>The transaction submitted to the API.</returns>
-		public async Task<PendingTransactionPayload> CreateToken(
+		public Task<PendingTransactionPayload> CreateToken(
 			Account account,
 			string collectionName,
 			string name,
@@ -100,67 +100,7 @@ namespace Mirage.Aptos.SDK
 				propertyTypes
 			);
 
-			return await GenerateSignSubmitTransaction(account, payload, extraArgs);
-		}
-
-		private EntryFunctionPayload CreateTokenPayload(
-			Account account,
-			string collectionName,
-			string name,
-			string description,
-			ulong supply,
-			string uri,
-			ulong max = UInt64.MaxValue,
-			string royaltyPayeeAddress = null,
-			int royaltyPointsDenominator = 0,
-			int royaltyPointsNumerator = 0,
-			string[] propertyKeys = null,
-			string[] propertyValues = null,
-			string[] propertyTypes = null
-		)
-		{
-			if (royaltyPayeeAddress == null)
-			{
-				royaltyPayeeAddress = account.Address;
-			}
-
-			if (propertyKeys == null)
-			{
-				propertyKeys = Array.Empty<string>();
-			}
-
-			if (propertyValues == null)
-			{
-				propertyValues = Array.Empty<string>();
-			}
-
-			if (propertyTypes == null)
-			{
-				propertyTypes = Array.Empty<string>();
-			}
-
-			return new EntryFunctionPayload
-			{
-				Type = TransactionPayloadTypes.EntryFunction,
-				Function = FunctionTypes.CreateTokenScript,
-				TypeArguments = Array.Empty<string>(),
-				Arguments = new object[]
-				{
-					collectionName,
-					name,
-					description,
-					supply.ToString(),
-					max.ToString(),
-					uri,
-					royaltyPayeeAddress,
-					royaltyPointsDenominator.ToString(),
-					royaltyPointsNumerator.ToString(),
-					new bool[] { false, false, false, false, false },
-					propertyKeys,
-					propertyValues,
-					propertyTypes
-				}
-			};
+			return GenerateSignSubmitTransaction(account, payload, extraArgs);
 		}
 
 		/// <summary>
@@ -356,6 +296,66 @@ namespace Mirage.Aptos.SDK
 			var receipt = await _client.SubmitTransaction(request);
 
 			return receipt;
+		}
+		
+		private EntryFunctionPayload CreateTokenPayload(
+			Account account,
+			string collectionName,
+			string name,
+			string description,
+			ulong supply,
+			string uri,
+			ulong max = UInt64.MaxValue,
+			string royaltyPayeeAddress = null,
+			int royaltyPointsDenominator = 0,
+			int royaltyPointsNumerator = 0,
+			string[] propertyKeys = null,
+			string[] propertyValues = null,
+			string[] propertyTypes = null
+		)
+		{
+			if (royaltyPayeeAddress == null)
+			{
+				royaltyPayeeAddress = account.Address;
+			}
+
+			if (propertyKeys == null)
+			{
+				propertyKeys = Array.Empty<string>();
+			}
+
+			if (propertyValues == null)
+			{
+				propertyValues = Array.Empty<string>();
+			}
+
+			if (propertyTypes == null)
+			{
+				propertyTypes = Array.Empty<string>();
+			}
+
+			return new EntryFunctionPayload
+			{
+				Type = TransactionPayloadTypes.EntryFunction,
+				Function = FunctionTypes.CreateTokenScript,
+				TypeArguments = Array.Empty<string>(),
+				Arguments = new object[]
+				{
+					collectionName,
+					name,
+					description,
+					supply.ToString(),
+					max.ToString(),
+					uri,
+					royaltyPayeeAddress,
+					royaltyPointsDenominator.ToString(),
+					royaltyPointsNumerator.ToString(),
+					new bool[] { false, false, false, false, false },
+					propertyKeys,
+					propertyValues,
+					propertyTypes
+				}
+			};
 		}
 	}
 }
