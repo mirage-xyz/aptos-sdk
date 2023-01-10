@@ -38,6 +38,8 @@ or download it from [releases](https://github.com/mirage-xyz/aptos-sdk/releases)
 
 ## References
 
+To get references documentation please follow the [link](https://aptos-docs.mirage.xyz/api/Mirage.Aptos.SDK.html).
+
 ## Examples
 
 ### Transfer coins
