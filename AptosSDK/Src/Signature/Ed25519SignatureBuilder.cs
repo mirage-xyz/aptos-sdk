@@ -30,7 +30,7 @@ namespace Mirage.Aptos.SDK
 			var signingMessage = salt.Concat(transaction).ToArray();
 
 			var signature = sender.Sign(signingMessage);
-			return signature.Take(64).ToArray().ToHexCompact(true);
+			return signature.Take(64).ToArray().ToHex(true);
 		}
 
 		private byte[] GetSalt()
