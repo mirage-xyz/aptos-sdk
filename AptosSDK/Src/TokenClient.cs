@@ -4,7 +4,6 @@ using Mirage.Aptos.SDK.Constants;
 using Mirage.Aptos.SDK.DTO;
 using Mirage.Aptos.Constants;
 using Mirage.Aptos.SDK.DTO.ResponsePayloads;
-using Newtonsoft.Json;
 
 namespace Mirage.Aptos.SDK
 {
@@ -46,7 +45,7 @@ namespace Mirage.Aptos.SDK
 					{ name, description, uri, maxAmount.ToString(), new bool[] { false, false, false } }
 			};
 
-			return GenerateSignSubmitTransaction(account, payload, extraArgs);
+			return SubmitSignedTransaction(account, payload, extraArgs);
 		}
 
 		/// <summary>
@@ -100,7 +99,7 @@ namespace Mirage.Aptos.SDK
 				propertyTypes
 			);
 
-			return GenerateSignSubmitTransaction(account, payload, extraArgs);
+			return SubmitSignedTransaction(account, payload, extraArgs);
 		}
 
 		/// <summary>
@@ -135,7 +134,7 @@ namespace Mirage.Aptos.SDK
 					{ receiver, creator, collectionName, name, propertyVersion.ToString(), amount.ToString() }
 			};
 
-			return GenerateSignSubmitTransaction(account, payload, extraArgs);
+			return SubmitSignedTransaction(account, payload, extraArgs);
 		}
 
 		/// <summary>
@@ -168,7 +167,7 @@ namespace Mirage.Aptos.SDK
 					{ sender, creator, collectionName, name, propertyVersion.ToString() }
 			};
 
-			return GenerateSignSubmitTransaction(account, payload, extraArgs);
+			return SubmitSignedTransaction(account, payload, extraArgs);
 		}
 
 		public async Task<CollectionPayload> GetCollectionData(string creator, string collectionName)
@@ -248,6 +247,7 @@ namespace Mirage.Aptos.SDK
 			}
 
 			var handle = collectionData.Tokens.Handle;
+			Console.WriteLine($"handle = {handle}");
 
 			var request = new TableItemRequest
 			{
@@ -271,6 +271,42 @@ namespace Mirage.Aptos.SDK
 				throw;
 			}
 		}
+		
+		/// <summary>
+		/// Generates and submits a transaction to the transaction simulation
+		/// endpoint. For this we generate a transaction with a fake signature.
+		/// </summary>
+		/// <param name="account">Account which will claim transaction.</param>
+		/// <param name="payload">Transaction payload.</param>
+		/// <param name="extraArgs">Extra args for checking the balance.</param>
+		/// <param name="estimateMaxGasAmount">If set to true, the max gas value in the transaction will be ignored and the maximum possible gas will be used.</param>
+		/// <param name="estimateGasUnitPrice">If set to true, the gas unit price in the transaction will be ignored and the estimated value will be used.</param>
+		/// <param name="estimatePrioritizedGasUnitPrice">If set to true, the transaction will use a higher price than the original estimate.</param>
+		/// <returns>The BCS encoded signed transaction, which you should then provide.</returns>
+		public async Task<UserTransaction> SimulateTransaction(
+			Account account,
+			EntryFunctionPayload payload,
+			OptionalTransactionArgs extraArgs = null,
+			bool? estimateMaxGasAmount = null,
+			bool? estimateGasUnitPrice = null,
+			bool? estimatePrioritizedGasUnitPrice = null
+		)
+		{
+			var transaction = await PrepareTransaction(account, payload, extraArgs);
+
+			var raw = transaction.GetRaw();
+			var signature = _signatureBuilder.GetSimulatedSignature(account, raw);
+			var request = transaction.GetRequest(payload, signature);
+
+			var simulatedTransaction = await _client.SimulateTransaction(
+				request,
+				estimateMaxGasAmount,
+				estimateGasUnitPrice,
+				estimatePrioritizedGasUnitPrice
+			);
+
+			return simulatedTransaction;
+		}
 
 		private TokenFromAccount CreateEmptyToken(TokenId tokenId)
 		{
@@ -281,7 +317,7 @@ namespace Mirage.Aptos.SDK
 			};
 		}
 
-		private async Task<PendingTransactionPayload> GenerateSignSubmitTransaction(
+		private async Task<PendingTransactionPayload> SubmitSignedTransaction(
 			Account account,
 			EntryFunctionPayload payload,
 			OptionalTransactionArgs extraArgs = null
@@ -297,7 +333,7 @@ namespace Mirage.Aptos.SDK
 
 			return receipt;
 		}
-		
+
 		private EntryFunctionPayload CreateTokenPayload(
 			Account account,
 			string collectionName,
