@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: Mirage.Aptos.SDK
+  commentId: N:Mirage.Aptos.SDK
+  id: Mirage.Aptos.SDK
+  children:
+  - Mirage.Aptos.SDK.Account
+  - Mirage.Aptos.SDK.Client
+  - Mirage.Aptos.SDK.CoinClient
+  - Mirage.Aptos.SDK.FaucetClient
+  - Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: Mirage.Aptos.SDK
+  nameWithType: Mirage.Aptos.SDK
+  fullName: Mirage.Aptos.SDK
+  type: Namespace
+  assemblies:
+  - AptosSDK
+references:
+- uid: Mirage.Aptos.SDK.Account
+  commentId: T:Mirage.Aptos.SDK.Account
+  parent: Mirage.Aptos.SDK
+  name: Account
+  nameWithType: Account
+  fullName: Mirage.Aptos.SDK.Account
+- uid: Mirage.Aptos.SDK.CoinClient
+  commentId: T:Mirage.Aptos.SDK.CoinClient
+  name: CoinClient
+  nameWithType: CoinClient
+  fullName: Mirage.Aptos.SDK.CoinClient
+- uid: Mirage.Aptos.SDK.TokenClient
+  commentId: T:Mirage.Aptos.SDK.TokenClient
+  name: TokenClient
+  nameWithType: TokenClient
+  fullName: Mirage.Aptos.SDK.TokenClient
+- uid: Mirage.Aptos.SDK.Client
+  commentId: T:Mirage.Aptos.SDK.Client
+  parent: Mirage.Aptos.SDK
+  name: Client
+  nameWithType: Client
+  fullName: Mirage.Aptos.SDK.Client
+- uid: Mirage.Aptos.SDK.FaucetClient
+  commentId: T:Mirage.Aptos.SDK.FaucetClient
+  name: FaucetClient
+  nameWithType: FaucetClient
+  fullName: Mirage.Aptos.SDK.FaucetClient
+- uid: Mirage.Aptos.SDK
+  commentId: N:Mirage.Aptos.SDK
+  name: Mirage.Aptos.SDK
+  nameWithType: Mirage.Aptos.SDK
+  fullName: Mirage.Aptos.SDK

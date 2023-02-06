@@ -70,6 +70,7 @@ namespace AptosSDKTest
 				1,
 				"https://mirage.xyz/_next/static/videos/video-desktop-8511e2ee740953e08e74b95f401399f7.webm"
 			);
+			Console.WriteLine(transaction.Hash);
 			
 			await RequestMinedTransaction(transaction.Hash);
 

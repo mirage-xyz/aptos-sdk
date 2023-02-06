@@ -1,0 +1,439 @@
+### YamlMime:ManagedReference
+items:
+- uid: Mirage.Aptos.SDK.CoinClient
+  commentId: T:Mirage.Aptos.SDK.CoinClient
+  id: CoinClient
+  parent: Mirage.Aptos.SDK
+  children:
+  - Mirage.Aptos.SDK.CoinClient.#ctor(Mirage.Aptos.SDK.Client)
+  - Mirage.Aptos.SDK.CoinClient.GetBalance(Mirage.Aptos.SDK.Account)
+  - Mirage.Aptos.SDK.CoinClient.SimulateTransfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  - Mirage.Aptos.SDK.CoinClient.Transfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  langs:
+  - csharp
+  - vb
+  name: CoinClient
+  nameWithType: CoinClient
+  fullName: Mirage.Aptos.SDK.CoinClient
+  type: Class
+  source:
+    remote:
+      path: AptosSDK/Src/CoinClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: CoinClient
+    path: ../AptosSDK/Src/CoinClient.cs
+    startLine: 9
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: 'public class CoinClient : SpecificClient'
+    content.vb: >-
+      Public Class CoinClient
+          Inherits SpecificClient
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Mirage.Aptos.SDK.CoinClient.#ctor(Mirage.Aptos.SDK.Client)
+  commentId: M:Mirage.Aptos.SDK.CoinClient.#ctor(Mirage.Aptos.SDK.Client)
+  id: '#ctor(Mirage.Aptos.SDK.Client)'
+  parent: Mirage.Aptos.SDK.CoinClient
+  langs:
+  - csharp
+  - vb
+  name: CoinClient(Client)
+  nameWithType: CoinClient.CoinClient(Client)
+  fullName: Mirage.Aptos.SDK.CoinClient.CoinClient(Mirage.Aptos.SDK.Client)
+  type: Constructor
+  source:
+    remote:
+      path: AptosSDK/Src/CoinClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: .ctor
+    path: ../AptosSDK/Src/CoinClient.cs
+    startLine: 17
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nCreates new CoinClient instance\n"
+  example: []
+  syntax:
+    content: public CoinClient(Client client)
+    parameters:
+    - id: client
+      type: Mirage.Aptos.SDK.Client
+      description: <xref href="Mirage.Aptos.SDK.Client" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Sub New(client As Client)
+  overload: Mirage.Aptos.SDK.CoinClient.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.CoinClient.Transfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  commentId: M:Mirage.Aptos.SDK.CoinClient.Transfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  id: Transfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  parent: Mirage.Aptos.SDK.CoinClient
+  langs:
+  - csharp
+  - vb
+  name: Transfer(Account, Account, UInt64)
+  nameWithType: CoinClient.Transfer(Account, Account, UInt64)
+  fullName: Mirage.Aptos.SDK.CoinClient.Transfer(Mirage.Aptos.SDK.Account, Mirage.Aptos.SDK.Account, System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/CoinClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: Transfer
+    path: ../AptosSDK/Src/CoinClient.cs
+    startLine: 29
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nGenerate, sign, and submit a transaction to the Aptos blockchain API to\ntransfer AptosCoin from one account to another.\n"
+  example: []
+  syntax:
+    content: public async Task<PendingTransactionPayload> Transfer(Account from, Account to, ulong amount)
+    parameters:
+    - id: from
+      type: Mirage.Aptos.SDK.Account
+      description: Account sending the coins.
+    - id: to
+      type: Mirage.Aptos.SDK.Account
+      description: Account to receive the coins.
+    - id: amount
+      type: System.UInt64
+      description: Number of coins to transfer.
+    return:
+      type: System.Threading.Tasks.Task{PendingTransactionPayload}
+      description: The transaction submitted to the API.
+    content.vb: Public Function Transfer(from As Account, to As Account, amount As ULong) As Task(Of PendingTransactionPayload)
+  overload: Mirage.Aptos.SDK.CoinClient.Transfer*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.CoinClient.SimulateTransfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  commentId: M:Mirage.Aptos.SDK.CoinClient.SimulateTransfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  id: SimulateTransfer(Mirage.Aptos.SDK.Account,Mirage.Aptos.SDK.Account,System.UInt64)
+  parent: Mirage.Aptos.SDK.CoinClient
+  langs:
+  - csharp
+  - vb
+  name: SimulateTransfer(Account, Account, UInt64)
+  nameWithType: CoinClient.SimulateTransfer(Account, Account, UInt64)
+  fullName: Mirage.Aptos.SDK.CoinClient.SimulateTransfer(Mirage.Aptos.SDK.Account, Mirage.Aptos.SDK.Account, System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/CoinClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: SimulateTransfer
+    path: ../AptosSDK/Src/CoinClient.cs
+    startLine: 37
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public async Task<UserTransaction> SimulateTransfer(Account from, Account to, ulong amount)
+    parameters:
+    - id: from
+      type: Mirage.Aptos.SDK.Account
+    - id: to
+      type: Mirage.Aptos.SDK.Account
+    - id: amount
+      type: System.UInt64
+    return:
+      type: System.Threading.Tasks.Task{UserTransaction}
+    content.vb: Public Function SimulateTransfer(from As Account, to As Account, amount As ULong) As Task(Of UserTransaction)
+  overload: Mirage.Aptos.SDK.CoinClient.SimulateTransfer*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.CoinClient.GetBalance(Mirage.Aptos.SDK.Account)
+  commentId: M:Mirage.Aptos.SDK.CoinClient.GetBalance(Mirage.Aptos.SDK.Account)
+  id: GetBalance(Mirage.Aptos.SDK.Account)
+  parent: Mirage.Aptos.SDK.CoinClient
+  langs:
+  - csharp
+  - vb
+  name: GetBalance(Account)
+  nameWithType: CoinClient.GetBalance(Account)
+  fullName: Mirage.Aptos.SDK.CoinClient.GetBalance(Mirage.Aptos.SDK.Account)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/CoinClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetBalance
+    path: ../AptosSDK/Src/CoinClient.cs
+    startLine: 49
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nGet amount of AptosCoin on given account.\n"
+  example: []
+  syntax:
+    content: public async Task<BigInteger> GetBalance(Account account)
+    parameters:
+    - id: account
+      type: Mirage.Aptos.SDK.Account
+      description: Account that you want to check the balance of.
+    return:
+      type: System.Threading.Tasks.Task{BigInteger}
+      description: Task with the balance amount.
+    content.vb: Public Function GetBalance(account As Account) As Task(Of BigInteger)
+  overload: Mirage.Aptos.SDK.CoinClient.GetBalance*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+references:
+- uid: Mirage.Aptos.SDK
+  commentId: N:Mirage.Aptos.SDK
+  name: Mirage.Aptos.SDK
+  nameWithType: Mirage.Aptos.SDK
+  fullName: Mirage.Aptos.SDK
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Mirage.Aptos.SDK.Client
+  commentId: T:Mirage.Aptos.SDK.Client
+  parent: Mirage.Aptos.SDK
+  name: Client
+  nameWithType: Client
+  fullName: Mirage.Aptos.SDK.Client
+- uid: Mirage.Aptos.SDK.CoinClient.#ctor*
+  commentId: Overload:Mirage.Aptos.SDK.CoinClient.#ctor
+  name: CoinClient
+  nameWithType: CoinClient.CoinClient
+  fullName: Mirage.Aptos.SDK.CoinClient.CoinClient
+- uid: Mirage.Aptos.SDK.CoinClient.Transfer*
+  commentId: Overload:Mirage.Aptos.SDK.CoinClient.Transfer
+  name: Transfer
+  nameWithType: CoinClient.Transfer
+  fullName: Mirage.Aptos.SDK.CoinClient.Transfer
+- uid: Mirage.Aptos.SDK.Account
+  commentId: T:Mirage.Aptos.SDK.Account
+  parent: Mirage.Aptos.SDK
+  name: Account
+  nameWithType: Account
+  fullName: Mirage.Aptos.SDK.Account
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: System.Threading.Tasks.Task{PendingTransactionPayload}
+  commentId: T:System.Threading.Tasks.Task{PendingTransactionPayload}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<PendingTransactionPayload>
+  nameWithType: Task<PendingTransactionPayload>
+  fullName: System.Threading.Tasks.Task<PendingTransactionPayload>
+  nameWithType.vb: Task(Of PendingTransactionPayload)
+  fullName.vb: System.Threading.Tasks.Task(Of PendingTransactionPayload)
+  name.vb: Task(Of PendingTransactionPayload)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: PendingTransactionPayload
+    name: PendingTransactionPayload
+    nameWithType: PendingTransactionPayload
+    fullName: PendingTransactionPayload
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: PendingTransactionPayload
+    name: PendingTransactionPayload
+    nameWithType: PendingTransactionPayload
+    fullName: PendingTransactionPayload
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Mirage.Aptos.SDK.CoinClient.SimulateTransfer*
+  commentId: Overload:Mirage.Aptos.SDK.CoinClient.SimulateTransfer
+  name: SimulateTransfer
+  nameWithType: CoinClient.SimulateTransfer
+  fullName: Mirage.Aptos.SDK.CoinClient.SimulateTransfer
+- uid: System.Threading.Tasks.Task{UserTransaction}
+  commentId: T:System.Threading.Tasks.Task{UserTransaction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<UserTransaction>
+  nameWithType: Task<UserTransaction>
+  fullName: System.Threading.Tasks.Task<UserTransaction>
+  nameWithType.vb: Task(Of UserTransaction)
+  fullName.vb: System.Threading.Tasks.Task(Of UserTransaction)
+  name.vb: Task(Of UserTransaction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: UserTransaction
+    name: UserTransaction
+    nameWithType: UserTransaction
+    fullName: UserTransaction
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: UserTransaction
+    name: UserTransaction
+    nameWithType: UserTransaction
+    fullName: UserTransaction
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.CoinClient.GetBalance*
+  commentId: Overload:Mirage.Aptos.SDK.CoinClient.GetBalance
+  name: GetBalance
+  nameWithType: CoinClient.GetBalance
+  fullName: Mirage.Aptos.SDK.CoinClient.GetBalance
+- uid: System.Threading.Tasks.Task{BigInteger}
+  commentId: T:System.Threading.Tasks.Task{BigInteger}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<BigInteger>
+  nameWithType: Task<BigInteger>
+  fullName: System.Threading.Tasks.Task<BigInteger>
+  nameWithType.vb: Task(Of BigInteger)
+  fullName.vb: System.Threading.Tasks.Task(Of BigInteger)
+  name.vb: Task(Of BigInteger)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: BigInteger
+    name: BigInteger
+    nameWithType: BigInteger
+    fullName: BigInteger
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: BigInteger
+    name: BigInteger
+    nameWithType: BigInteger
+    fullName: BigInteger
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
