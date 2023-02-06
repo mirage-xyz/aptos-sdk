@@ -4,6 +4,9 @@ using Org.BouncyCastle.Crypto.Digests;
 
 namespace Mirage.Aptos.SDK
 {
+	/// <summary>
+	/// Class for creating and managing Aptos account.
+	/// </summary>
 	public class Account
 	{
 		private const byte AddressEnding = 0x00;
@@ -14,6 +17,9 @@ namespace Mirage.Aptos.SDK
 		public readonly string Address;
 		public readonly string PublicKey;
 
+		/// <summary>
+		/// Creates new account instance.
+		/// </summary>
 		public Account()
 		{
 			var seed = GenerateRandomSeed();
@@ -22,6 +28,10 @@ namespace Mirage.Aptos.SDK
 			PublicKey = _publicKey.ToHex(true);
 		}
 
+		/// <summary>
+		/// Creates new account instance.
+		/// </summary>
+		/// <param name="privateKey">Private key from which account key pair will be generated.</param>
 		public Account(byte[] privateKey)
 		{
 			var seed = privateKey.Slice(0, 32);
@@ -30,6 +40,12 @@ namespace Mirage.Aptos.SDK
 			PublicKey = _publicKey.ToHex(true);
 		}
 
+		/// <summary>
+		/// This is the key by which Aptos account is referenced.
+		/// It is the 32-byte of the SHA-3 256 cryptographic hash
+		///of the public key(s) concatenated with a signature scheme identifier byte
+		/// </summary>
+		/// <returns>Address associated with the given account.</returns>
 		public string GetAddress()
 		{
 			var digest = new Sha3Digest();
@@ -40,6 +56,11 @@ namespace Mirage.Aptos.SDK
 			return result.ToHex(true);
 		}
 
+		/// <summary>
+		/// Signs specified `message` with account's private key
+		/// </summary>
+		/// <param name="message">A message to sign.</param>
+		/// <returns>A signature byte array.</returns>
 		public byte[] Sign(byte[] message)
 		{
 			return Ed25519.Sign(message, _privateKey);
