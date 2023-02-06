@@ -46,7 +46,7 @@ namespace Mirage.Aptos.SDK
 		/// Get amount of AptosCoin on given account.
 		/// </summary>
 		/// <param name="account">Account that you want to check the balance of.</param>
-		/// <returns>Task with the balance as a <see cref="BigInteger"/>.</returns>
+		/// <returns>Task with the balance amount.</returns>
 		public async Task<BigInteger> GetBalance(Account account)
 		{
 			var resource = await _client.GetAccountResource(account.Address, ResourcesTypes.AptosCoin);

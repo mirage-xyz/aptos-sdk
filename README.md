@@ -12,7 +12,7 @@ Build package
 
 **NuGet** (_coming soon_)
 ```bash
-...
+dotnet add package AptosSDK --version 0.1.0
 ```
 **Paket**
 
