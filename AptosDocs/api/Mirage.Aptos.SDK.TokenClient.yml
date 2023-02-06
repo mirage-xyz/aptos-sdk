@@ -1,0 +1,1051 @@
+### YamlMime:ManagedReference
+items:
+- uid: Mirage.Aptos.SDK.TokenClient
+  commentId: T:Mirage.Aptos.SDK.TokenClient
+  id: TokenClient
+  parent: Mirage.Aptos.SDK
+  children:
+  - Mirage.Aptos.SDK.TokenClient.#ctor(Mirage.Aptos.SDK.Client)
+  - Mirage.Aptos.SDK.TokenClient.ClaimToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  - Mirage.Aptos.SDK.TokenClient.CreateCollection(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  - Mirage.Aptos.SDK.TokenClient.CreateToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.UInt64,System.String,System.UInt64,System.String,System.Int32,System.Int32,System.String[],System.String[],System.String[],OptionalTransactionArgs)
+  - Mirage.Aptos.SDK.TokenClient.GetCollectionData(System.String,System.String)
+  - Mirage.Aptos.SDK.TokenClient.GetToken(System.String,System.String,System.String,System.Int64)
+  - Mirage.Aptos.SDK.TokenClient.GetTokenData(System.String,System.String,System.String)
+  - Mirage.Aptos.SDK.TokenClient.GetTokenForAccount(System.String,TokenId)
+  - Mirage.Aptos.SDK.TokenClient.OfferToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,System.Int64,OptionalTransactionArgs)
+  - Mirage.Aptos.SDK.TokenClient.SimulateTransaction(Mirage.Aptos.SDK.Account,EntryFunctionPayload,OptionalTransactionArgs,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  langs:
+  - csharp
+  - vb
+  name: TokenClient
+  nameWithType: TokenClient
+  fullName: Mirage.Aptos.SDK.TokenClient
+  type: Class
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: TokenClient
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 9
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: 'public class TokenClient : SpecificClient'
+    content.vb: >-
+      Public Class TokenClient
+          Inherits SpecificClient
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Mirage.Aptos.SDK.TokenClient.#ctor(Mirage.Aptos.SDK.Client)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.#ctor(Mirage.Aptos.SDK.Client)
+  id: '#ctor(Mirage.Aptos.SDK.Client)'
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: TokenClient(Client)
+  nameWithType: TokenClient.TokenClient(Client)
+  fullName: Mirage.Aptos.SDK.TokenClient.TokenClient(Mirage.Aptos.SDK.Client)
+  type: Constructor
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: .ctor
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 15
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nCreates new TokenClient instance.\n"
+  example: []
+  syntax:
+    content: public TokenClient(Client client)
+    parameters:
+    - id: client
+      type: Mirage.Aptos.SDK.Client
+      description: <xref href="Mirage.Aptos.SDK.Client" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Sub New(client As Client)
+  overload: Mirage.Aptos.SDK.TokenClient.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.CreateCollection(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.CreateCollection(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  id: CreateCollection(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: CreateCollection(Account, String, String, String, Int64, OptionalTransactionArgs)
+  nameWithType: TokenClient.CreateCollection(Account, String, String, String, Int64, OptionalTransactionArgs)
+  fullName: Mirage.Aptos.SDK.TokenClient.CreateCollection(Mirage.Aptos.SDK.Account, System.String, System.String, System.String, System.Int64, OptionalTransactionArgs)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: CreateCollection
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 29
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nCreates a new NFT collection within the specified account.\n"
+  example: []
+  syntax:
+    content: public Task<PendingTransactionPayload> CreateCollection(Account account, string name, string description, string uri, long maxAmount = 4294967295L, OptionalTransactionArgs extraArgs = null)
+    parameters:
+    - id: account
+      type: Mirage.Aptos.SDK.Account
+      description: Account where collection will be created.
+    - id: name
+      type: System.String
+      description: Collection name.
+    - id: description
+      type: System.String
+      description: Collection description.
+    - id: uri
+      type: System.String
+      description: URL to additional info about collection.
+    - id: maxAmount
+      type: System.Int64
+      description: Maximum number of `token_data` allowed within this collection.
+    - id: extraArgs
+      type: OptionalTransactionArgs
+      description: Extra args for checking the balance.
+    return:
+      type: System.Threading.Tasks.Task{PendingTransactionPayload}
+      description: The transaction submitted to the API.
+    content.vb: Public Function CreateCollection(account As Account, name As String, description As String, uri As String, maxAmount As Long = 4294967295L, extraArgs As OptionalTransactionArgs = Nothing) As Task(Of PendingTransactionPayload)
+  overload: Mirage.Aptos.SDK.TokenClient.CreateCollection*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.CreateToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.UInt64,System.String,System.UInt64,System.String,System.Int32,System.Int32,System.String[],System.String[],System.String[],OptionalTransactionArgs)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.CreateToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.UInt64,System.String,System.UInt64,System.String,System.Int32,System.Int32,System.String[],System.String[],System.String[],OptionalTransactionArgs)
+  id: CreateToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.UInt64,System.String,System.UInt64,System.String,System.Int32,System.Int32,System.String[],System.String[],System.String[],OptionalTransactionArgs)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: CreateToken(Account, String, String, String, UInt64, String, UInt64, String, Int32, Int32, String[], String[], String[], OptionalTransactionArgs)
+  nameWithType: TokenClient.CreateToken(Account, String, String, String, UInt64, String, UInt64, String, Int32, Int32, String[], String[], String[], OptionalTransactionArgs)
+  fullName: Mirage.Aptos.SDK.TokenClient.CreateToken(Mirage.Aptos.SDK.Account, System.String, System.String, System.String, System.UInt64, System.String, System.UInt64, System.String, System.Int32, System.Int32, System.String[], System.String[], System.String[], OptionalTransactionArgs)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: CreateToken
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 68
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nCreates a new NFT collection within the specified account.\n"
+  example: []
+  syntax:
+    content: public Task<PendingTransactionPayload> CreateToken(Account account, string collectionName, string name, string description, ulong supply, string uri, ulong max = 18446744073709551615UL, string royaltyPayeeAddress = null, int royaltyPointsDenominator = 0, int royaltyPointsNumerator = 0, string[] propertyKeys = null, string[] propertyValues = null, string[] propertyTypes = null, OptionalTransactionArgs extraArgs = null)
+    parameters:
+    - id: account
+      type: Mirage.Aptos.SDK.Account
+      description: Account where token will be created.
+    - id: collectionName
+      type: System.String
+      description: Name of collection, that token belongs to.
+    - id: name
+      type: System.String
+      description: Token name.
+    - id: description
+      type: System.String
+      description: Token description.
+    - id: supply
+      type: System.UInt64
+      description: Token supply.
+    - id: uri
+      type: System.String
+      description: URL to additional info about token.
+    - id: max
+      type: System.UInt64
+      description: The maxium of tokens can be minted from this token.
+    - id: royaltyPayeeAddress
+      type: System.String
+      description: The address to receive the royalty, the address can be a shared account address.
+    - id: royaltyPointsDenominator
+      type: System.Int32
+      description: The denominator for calculating royalty.
+    - id: royaltyPointsNumerator
+      type: System.Int32
+      description: The numerator for calculating royalty.
+    - id: propertyKeys
+      type: System.String[]
+      description: The property keys for storing on-chain properties.
+    - id: propertyValues
+      type: System.String[]
+      description: The property values to be stored on-chain.
+    - id: propertyTypes
+      type: System.String[]
+      description: The type of property values.
+    - id: extraArgs
+      type: OptionalTransactionArgs
+      description: Extra args for checking the balance.
+    return:
+      type: System.Threading.Tasks.Task{PendingTransactionPayload}
+      description: The transaction submitted to the API.
+    content.vb: Public Function CreateToken(account As Account, collectionName As String, name As String, description As String, supply As ULong, uri As String, max As ULong = 18446744073709551615UL, royaltyPayeeAddress As String = Nothing, royaltyPointsDenominator As Integer = 0, royaltyPointsNumerator As Integer = 0, propertyKeys As String() = Nothing, propertyValues As String() = Nothing, propertyTypes As String() = Nothing, extraArgs As OptionalTransactionArgs = Nothing) As Task(Of PendingTransactionPayload)
+  overload: Mirage.Aptos.SDK.TokenClient.CreateToken*
+  nameWithType.vb: TokenClient.CreateToken(Account, String, String, String, UInt64, String, UInt64, String, Int32, Int32, String(), String(), String(), OptionalTransactionArgs)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.TokenClient.CreateToken(Mirage.Aptos.SDK.Account, System.String, System.String, System.String, System.UInt64, System.String, System.UInt64, System.String, System.Int32, System.Int32, System.String(), System.String(), System.String(), OptionalTransactionArgs)
+  name.vb: CreateToken(Account, String, String, String, UInt64, String, UInt64, String, Int32, Int32, String(), String(), String(), OptionalTransactionArgs)
+- uid: Mirage.Aptos.SDK.TokenClient.OfferToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,System.Int64,OptionalTransactionArgs)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.OfferToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,System.Int64,OptionalTransactionArgs)
+  id: OfferToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,System.Int64,OptionalTransactionArgs)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: OfferToken(Account, String, String, String, String, Int64, Int64, OptionalTransactionArgs)
+  nameWithType: TokenClient.OfferToken(Account, String, String, String, String, Int64, Int64, OptionalTransactionArgs)
+  fullName: Mirage.Aptos.SDK.TokenClient.OfferToken(Mirage.Aptos.SDK.Account, System.String, System.String, System.String, System.String, System.Int64, System.Int64, OptionalTransactionArgs)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: OfferToken
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 116
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nTransfers specified amount of tokens from account to receiver.\n"
+  example: []
+  syntax:
+    content: public Task<PendingTransactionPayload> OfferToken(Account account, string receiver, string creator, string collectionName, string name, long amount, long propertyVersion = 0L, OptionalTransactionArgs extraArgs = null)
+    parameters:
+    - id: account
+      type: Mirage.Aptos.SDK.Account
+      description: Account where token from which tokens will be transfered.
+    - id: receiver
+      type: System.String
+      description: Hex-encoded 32 byte Aptos account address to which tokens will be transfered.
+    - id: creator
+      type: System.String
+      description: Hex-encoded 32 byte Aptos account address to which created tokens.
+    - id: collectionName
+      type: System.String
+      description: Name of collection where token is stored.
+    - id: name
+      type: System.String
+      description: Token name.
+    - id: amount
+      type: System.Int64
+      description: Amount of tokens which will be transfered.
+    - id: propertyVersion
+      type: System.Int64
+      description: The version of token PropertyMap with a default value 0.
+    - id: extraArgs
+      type: OptionalTransactionArgs
+      description: Extra args for checking the balance.
+    return:
+      type: System.Threading.Tasks.Task{PendingTransactionPayload}
+      description: The transaction submitted to the API.
+    content.vb: Public Function OfferToken(account As Account, receiver As String, creator As String, collectionName As String, name As String, amount As Long, propertyVersion As Long = 0L, extraArgs As OptionalTransactionArgs = Nothing) As Task(Of PendingTransactionPayload)
+  overload: Mirage.Aptos.SDK.TokenClient.OfferToken*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.ClaimToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.ClaimToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  id: ClaimToken(Mirage.Aptos.SDK.Account,System.String,System.String,System.String,System.String,System.Int64,OptionalTransactionArgs)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: ClaimToken(Account, String, String, String, String, Int64, OptionalTransactionArgs)
+  nameWithType: TokenClient.ClaimToken(Account, String, String, String, String, Int64, OptionalTransactionArgs)
+  fullName: Mirage.Aptos.SDK.TokenClient.ClaimToken(Mirage.Aptos.SDK.Account, System.String, System.String, System.String, System.String, System.Int64, OptionalTransactionArgs)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: ClaimToken
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 150
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nClaims a token on specified account.\n"
+  example: []
+  syntax:
+    content: public Task<PendingTransactionPayload> ClaimToken(Account account, string sender, string creator, string collectionName, string name, long propertyVersion = 0L, OptionalTransactionArgs extraArgs = null)
+    parameters:
+    - id: account
+      type: Mirage.Aptos.SDK.Account
+      description: Account which will claim token.
+    - id: sender
+      type: System.String
+      description: Hex-encoded 32 byte Aptos account address which holds a token.
+    - id: creator
+      type: System.String
+      description: Hex-encoded 32 byte Aptos account address which created a token.
+    - id: collectionName
+      type: System.String
+      description: Name of collection where token is stored.
+    - id: name
+      type: System.String
+      description: Token name.
+    - id: propertyVersion
+      type: System.Int64
+      description: The version of token PropertyMap with a default value 0.
+    - id: extraArgs
+      type: OptionalTransactionArgs
+      description: Extra args for checking the balance.
+    return:
+      type: System.Threading.Tasks.Task{PendingTransactionPayload}
+      description: The transaction submitted to the API.
+    content.vb: Public Function ClaimToken(account As Account, sender As String, creator As String, collectionName As String, name As String, propertyVersion As Long = 0L, extraArgs As OptionalTransactionArgs = Nothing) As Task(Of PendingTransactionPayload)
+  overload: Mirage.Aptos.SDK.TokenClient.ClaimToken*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.GetCollectionData(System.String,System.String)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.GetCollectionData(System.String,System.String)
+  id: GetCollectionData(System.String,System.String)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: GetCollectionData(String, String)
+  nameWithType: TokenClient.GetCollectionData(String, String)
+  fullName: Mirage.Aptos.SDK.TokenClient.GetCollectionData(System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetCollectionData
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 172
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public async Task<CollectionPayload> GetCollectionData(string creator, string collectionName)
+    parameters:
+    - id: creator
+      type: System.String
+    - id: collectionName
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{CollectionPayload}
+    content.vb: Public Function GetCollectionData(creator As String, collectionName As String) As Task(Of CollectionPayload)
+  overload: Mirage.Aptos.SDK.TokenClient.GetCollectionData*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.GetTokenData(System.String,System.String,System.String)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.GetTokenData(System.String,System.String,System.String)
+  id: GetTokenData(System.String,System.String,System.String)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: GetTokenData(String, String, String)
+  nameWithType: TokenClient.GetTokenData(String, String, String)
+  fullName: Mirage.Aptos.SDK.TokenClient.GetTokenData(System.String, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetTokenData
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 188
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public async Task<TokenPayload> GetTokenData(string creator, string collectionName, string tokenName)
+    parameters:
+    - id: creator
+      type: System.String
+    - id: collectionName
+      type: System.String
+    - id: tokenName
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{TokenPayload}
+    content.vb: Public Function GetTokenData(creator As String, collectionName As String, tokenName As String) As Task(Of TokenPayload)
+  overload: Mirage.Aptos.SDK.TokenClient.GetTokenData*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.GetToken(System.String,System.String,System.String,System.Int64)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.GetToken(System.String,System.String,System.String,System.Int64)
+  id: GetToken(System.String,System.String,System.String,System.Int64)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: GetToken(String, String, String, Int64)
+  nameWithType: TokenClient.GetToken(String, String, String, Int64)
+  fullName: Mirage.Aptos.SDK.TokenClient.GetToken(System.String, System.String, System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetToken
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 211
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<TokenFromAccount> GetToken(string creator, string collectionName, string tokenName, long propertyVersion)
+    parameters:
+    - id: creator
+      type: System.String
+    - id: collectionName
+      type: System.String
+    - id: tokenName
+      type: System.String
+    - id: propertyVersion
+      type: System.Int64
+    return:
+      type: System.Threading.Tasks.Task{TokenFromAccount}
+    content.vb: Public Function GetToken(creator As String, collectionName As String, tokenName As String, propertyVersion As Long) As Task(Of TokenFromAccount)
+  overload: Mirage.Aptos.SDK.TokenClient.GetToken*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.GetTokenForAccount(System.String,TokenId)
+  commentId: M:Mirage.Aptos.SDK.TokenClient.GetTokenForAccount(System.String,TokenId)
+  id: GetTokenForAccount(System.String,TokenId)
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: GetTokenForAccount(String, TokenId)
+  nameWithType: TokenClient.GetTokenForAccount(String, TokenId)
+  fullName: Mirage.Aptos.SDK.TokenClient.GetTokenForAccount(System.String, TokenId)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetTokenForAccount
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 232
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public async Task<TokenFromAccount> GetTokenForAccount(string creator, TokenId tokenId)
+    parameters:
+    - id: creator
+      type: System.String
+    - id: tokenId
+      type: TokenId
+    return:
+      type: System.Threading.Tasks.Task{TokenFromAccount}
+    content.vb: Public Function GetTokenForAccount(creator As String, tokenId As TokenId) As Task(Of TokenFromAccount)
+  overload: Mirage.Aptos.SDK.TokenClient.GetTokenForAccount*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.TokenClient.SimulateTransaction(Mirage.Aptos.SDK.Account,EntryFunctionPayload,OptionalTransactionArgs,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  commentId: M:Mirage.Aptos.SDK.TokenClient.SimulateTransaction(Mirage.Aptos.SDK.Account,EntryFunctionPayload,OptionalTransactionArgs,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  id: SimulateTransaction(Mirage.Aptos.SDK.Account,EntryFunctionPayload,OptionalTransactionArgs,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  parent: Mirage.Aptos.SDK.TokenClient
+  langs:
+  - csharp
+  - vb
+  name: SimulateTransaction(Account, EntryFunctionPayload, OptionalTransactionArgs, Nullable<Boolean>, Nullable<Boolean>, Nullable<Boolean>)
+  nameWithType: TokenClient.SimulateTransaction(Account, EntryFunctionPayload, OptionalTransactionArgs, Nullable<Boolean>, Nullable<Boolean>, Nullable<Boolean>)
+  fullName: Mirage.Aptos.SDK.TokenClient.SimulateTransaction(Mirage.Aptos.SDK.Account, EntryFunctionPayload, OptionalTransactionArgs, System.Nullable<System.Boolean>, System.Nullable<System.Boolean>, System.Nullable<System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/TokenClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: SimulateTransaction
+    path: ../AptosSDK/Src/TokenClient.cs
+    startLine: 285
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nGenerates and submits a transaction to the transaction simulation\nendpoint. For this we generate a transaction with a fake signature.\n"
+  example: []
+  syntax:
+    content: public async Task<UserTransaction> SimulateTransaction(Account account, EntryFunctionPayload payload, OptionalTransactionArgs extraArgs = null, bool? estimateMaxGasAmount = null, bool? estimateGasUnitPrice = null, bool? estimatePrioritizedGasUnitPrice = null)
+    parameters:
+    - id: account
+      type: Mirage.Aptos.SDK.Account
+      description: Account which will claim transaction.
+    - id: payload
+      type: EntryFunctionPayload
+      description: Transaction payload.
+    - id: extraArgs
+      type: OptionalTransactionArgs
+      description: Extra args for checking the balance.
+    - id: estimateMaxGasAmount
+      type: System.Nullable{System.Boolean}
+      description: If set to true, the max gas value in the transaction will be ignored and the maximum possible gas will be used.
+    - id: estimateGasUnitPrice
+      type: System.Nullable{System.Boolean}
+      description: If set to true, the gas unit price in the transaction will be ignored and the estimated value will be used.
+    - id: estimatePrioritizedGasUnitPrice
+      type: System.Nullable{System.Boolean}
+      description: If set to true, the transaction will use a higher price than the original estimate.
+    return:
+      type: System.Threading.Tasks.Task{UserTransaction}
+      description: The BCS encoded signed transaction, which you should then provide.
+    content.vb: Public Function SimulateTransaction(account As Account, payload As EntryFunctionPayload, extraArgs As OptionalTransactionArgs = Nothing, estimateMaxGasAmount As Boolean? = Nothing, estimateGasUnitPrice As Boolean? = Nothing, estimatePrioritizedGasUnitPrice As Boolean? = Nothing) As Task(Of UserTransaction)
+  overload: Mirage.Aptos.SDK.TokenClient.SimulateTransaction*
+  nameWithType.vb: TokenClient.SimulateTransaction(Account, EntryFunctionPayload, OptionalTransactionArgs, Nullable(Of Boolean), Nullable(Of Boolean), Nullable(Of Boolean))
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.TokenClient.SimulateTransaction(Mirage.Aptos.SDK.Account, EntryFunctionPayload, OptionalTransactionArgs, System.Nullable(Of System.Boolean), System.Nullable(Of System.Boolean), System.Nullable(Of System.Boolean))
+  name.vb: SimulateTransaction(Account, EntryFunctionPayload, OptionalTransactionArgs, Nullable(Of Boolean), Nullable(Of Boolean), Nullable(Of Boolean))
+references:
+- uid: Mirage.Aptos.SDK
+  commentId: N:Mirage.Aptos.SDK
+  name: Mirage.Aptos.SDK
+  nameWithType: Mirage.Aptos.SDK
+  fullName: Mirage.Aptos.SDK
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Mirage.Aptos.SDK.Client
+  commentId: T:Mirage.Aptos.SDK.Client
+  parent: Mirage.Aptos.SDK
+  name: Client
+  nameWithType: Client
+  fullName: Mirage.Aptos.SDK.Client
+- uid: Mirage.Aptos.SDK.TokenClient.#ctor*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.#ctor
+  name: TokenClient
+  nameWithType: TokenClient.TokenClient
+  fullName: Mirage.Aptos.SDK.TokenClient.TokenClient
+- uid: Mirage.Aptos.SDK.TokenClient.CreateCollection*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.CreateCollection
+  name: CreateCollection
+  nameWithType: TokenClient.CreateCollection
+  fullName: Mirage.Aptos.SDK.TokenClient.CreateCollection
+- uid: Mirage.Aptos.SDK.Account
+  commentId: T:Mirage.Aptos.SDK.Account
+  parent: Mirage.Aptos.SDK
+  name: Account
+  nameWithType: Account
+  fullName: Mirage.Aptos.SDK.Account
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: OptionalTransactionArgs
+  isExternal: true
+  name: OptionalTransactionArgs
+  nameWithType: OptionalTransactionArgs
+  fullName: OptionalTransactionArgs
+- uid: System.Threading.Tasks.Task{PendingTransactionPayload}
+  commentId: T:System.Threading.Tasks.Task{PendingTransactionPayload}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<PendingTransactionPayload>
+  nameWithType: Task<PendingTransactionPayload>
+  fullName: System.Threading.Tasks.Task<PendingTransactionPayload>
+  nameWithType.vb: Task(Of PendingTransactionPayload)
+  fullName.vb: System.Threading.Tasks.Task(Of PendingTransactionPayload)
+  name.vb: Task(Of PendingTransactionPayload)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: PendingTransactionPayload
+    name: PendingTransactionPayload
+    nameWithType: PendingTransactionPayload
+    fullName: PendingTransactionPayload
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: PendingTransactionPayload
+    name: PendingTransactionPayload
+    nameWithType: PendingTransactionPayload
+    fullName: PendingTransactionPayload
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Mirage.Aptos.SDK.TokenClient.CreateToken*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.CreateToken
+  name: CreateToken
+  nameWithType: TokenClient.CreateToken
+  fullName: Mirage.Aptos.SDK.TokenClient.CreateToken
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Mirage.Aptos.SDK.TokenClient.OfferToken*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.OfferToken
+  name: OfferToken
+  nameWithType: TokenClient.OfferToken
+  fullName: Mirage.Aptos.SDK.TokenClient.OfferToken
+- uid: Mirage.Aptos.SDK.TokenClient.ClaimToken*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.ClaimToken
+  name: ClaimToken
+  nameWithType: TokenClient.ClaimToken
+  fullName: Mirage.Aptos.SDK.TokenClient.ClaimToken
+- uid: Mirage.Aptos.SDK.TokenClient.GetCollectionData*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.GetCollectionData
+  name: GetCollectionData
+  nameWithType: TokenClient.GetCollectionData
+  fullName: Mirage.Aptos.SDK.TokenClient.GetCollectionData
+- uid: System.Threading.Tasks.Task{CollectionPayload}
+  commentId: T:System.Threading.Tasks.Task{CollectionPayload}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<CollectionPayload>
+  nameWithType: Task<CollectionPayload>
+  fullName: System.Threading.Tasks.Task<CollectionPayload>
+  nameWithType.vb: Task(Of CollectionPayload)
+  fullName.vb: System.Threading.Tasks.Task(Of CollectionPayload)
+  name.vb: Task(Of CollectionPayload)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CollectionPayload
+    name: CollectionPayload
+    nameWithType: CollectionPayload
+    fullName: CollectionPayload
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CollectionPayload
+    name: CollectionPayload
+    nameWithType: CollectionPayload
+    fullName: CollectionPayload
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.TokenClient.GetTokenData*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.GetTokenData
+  name: GetTokenData
+  nameWithType: TokenClient.GetTokenData
+  fullName: Mirage.Aptos.SDK.TokenClient.GetTokenData
+- uid: System.Threading.Tasks.Task{TokenPayload}
+  commentId: T:System.Threading.Tasks.Task{TokenPayload}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TokenPayload>
+  nameWithType: Task<TokenPayload>
+  fullName: System.Threading.Tasks.Task<TokenPayload>
+  nameWithType.vb: Task(Of TokenPayload)
+  fullName.vb: System.Threading.Tasks.Task(Of TokenPayload)
+  name.vb: Task(Of TokenPayload)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TokenPayload
+    name: TokenPayload
+    nameWithType: TokenPayload
+    fullName: TokenPayload
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TokenPayload
+    name: TokenPayload
+    nameWithType: TokenPayload
+    fullName: TokenPayload
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.TokenClient.GetToken*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.GetToken
+  name: GetToken
+  nameWithType: TokenClient.GetToken
+  fullName: Mirage.Aptos.SDK.TokenClient.GetToken
+- uid: System.Threading.Tasks.Task{TokenFromAccount}
+  commentId: T:System.Threading.Tasks.Task{TokenFromAccount}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TokenFromAccount>
+  nameWithType: Task<TokenFromAccount>
+  fullName: System.Threading.Tasks.Task<TokenFromAccount>
+  nameWithType.vb: Task(Of TokenFromAccount)
+  fullName.vb: System.Threading.Tasks.Task(Of TokenFromAccount)
+  name.vb: Task(Of TokenFromAccount)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TokenFromAccount
+    name: TokenFromAccount
+    nameWithType: TokenFromAccount
+    fullName: TokenFromAccount
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TokenFromAccount
+    name: TokenFromAccount
+    nameWithType: TokenFromAccount
+    fullName: TokenFromAccount
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.TokenClient.GetTokenForAccount*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.GetTokenForAccount
+  name: GetTokenForAccount
+  nameWithType: TokenClient.GetTokenForAccount
+  fullName: Mirage.Aptos.SDK.TokenClient.GetTokenForAccount
+- uid: TokenId
+  commentId: '!:TokenId'
+  isExternal: true
+  name: TokenId
+  nameWithType: TokenId
+  fullName: TokenId
+- uid: Mirage.Aptos.SDK.TokenClient.SimulateTransaction*
+  commentId: Overload:Mirage.Aptos.SDK.TokenClient.SimulateTransaction
+  name: SimulateTransaction
+  nameWithType: TokenClient.SimulateTransaction
+  fullName: Mirage.Aptos.SDK.TokenClient.SimulateTransaction
+- uid: EntryFunctionPayload
+  commentId: '!:EntryFunctionPayload'
+  isExternal: true
+  name: EntryFunctionPayload
+  nameWithType: EntryFunctionPayload
+  fullName: EntryFunctionPayload
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
+  fullName: System.Nullable<System.Boolean>
+  nameWithType.vb: Nullable(Of Boolean)
+  fullName.vb: System.Nullable(Of System.Boolean)
+  name.vb: Nullable(Of Boolean)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{UserTransaction}
+  commentId: T:System.Threading.Tasks.Task{UserTransaction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<UserTransaction>
+  nameWithType: Task<UserTransaction>
+  fullName: System.Threading.Tasks.Task<UserTransaction>
+  nameWithType.vb: Task(Of UserTransaction)
+  fullName.vb: System.Threading.Tasks.Task(Of UserTransaction)
+  name.vb: Task(Of UserTransaction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: UserTransaction
+    name: UserTransaction
+    nameWithType: UserTransaction
+    fullName: UserTransaction
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: UserTransaction
+    name: UserTransaction
+    nameWithType: UserTransaction
+    fullName: UserTransaction
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

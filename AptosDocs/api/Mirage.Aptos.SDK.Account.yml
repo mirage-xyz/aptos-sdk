@@ -1,0 +1,612 @@
+### YamlMime:ManagedReference
+items:
+- uid: Mirage.Aptos.SDK.Account
+  commentId: T:Mirage.Aptos.SDK.Account
+  id: Account
+  parent: Mirage.Aptos.SDK
+  children:
+  - Mirage.Aptos.SDK.Account.#ctor
+  - Mirage.Aptos.SDK.Account.#ctor(System.Byte[])
+  - Mirage.Aptos.SDK.Account.Address
+  - Mirage.Aptos.SDK.Account.GetAddress
+  - Mirage.Aptos.SDK.Account.PublicKey
+  - Mirage.Aptos.SDK.Account.Sign(System.Byte[])
+  langs:
+  - csharp
+  - vb
+  name: Account
+  nameWithType: Account
+  fullName: Mirage.Aptos.SDK.Account
+  type: Class
+  source:
+    remote:
+      path: AptosSDK/Src/Account.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: Account
+    path: ../AptosSDK/Src/Account.cs
+    startLine: 9
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nClass for creating and managing Aptos account.\n"
+  example: []
+  syntax:
+    content: public class Account
+    content.vb: Public Class Account
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Mirage.Aptos.SDK.Account.Address
+  commentId: F:Mirage.Aptos.SDK.Account.Address
+  id: Address
+  parent: Mirage.Aptos.SDK.Account
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: Account.Address
+  fullName: Mirage.Aptos.SDK.Account.Address
+  type: Field
+  source:
+    remote:
+      path: AptosSDK/Src/Account.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: Address
+    path: ../AptosSDK/Src/Account.cs
+    startLine: 16
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public readonly string Address
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Address As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Mirage.Aptos.SDK.Account.PublicKey
+  commentId: F:Mirage.Aptos.SDK.Account.PublicKey
+  id: PublicKey
+  parent: Mirage.Aptos.SDK.Account
+  langs:
+  - csharp
+  - vb
+  name: PublicKey
+  nameWithType: Account.PublicKey
+  fullName: Mirage.Aptos.SDK.Account.PublicKey
+  type: Field
+  source:
+    remote:
+      path: AptosSDK/Src/Account.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: PublicKey
+    path: ../AptosSDK/Src/Account.cs
+    startLine: 17
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public readonly string PublicKey
+    return:
+      type: System.String
+    content.vb: Public ReadOnly PublicKey As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Mirage.Aptos.SDK.Account.#ctor
+  commentId: M:Mirage.Aptos.SDK.Account.#ctor
+  id: '#ctor'
+  parent: Mirage.Aptos.SDK.Account
+  langs:
+  - csharp
+  - vb
+  name: Account()
+  nameWithType: Account.Account()
+  fullName: Mirage.Aptos.SDK.Account.Account()
+  type: Constructor
+  source:
+    remote:
+      path: AptosSDK/Src/Account.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: .ctor
+    path: ../AptosSDK/Src/Account.cs
+    startLine: 22
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nCreates new account instance.\n"
+  example: []
+  syntax:
+    content: public Account()
+    content.vb: Public Sub New
+  overload: Mirage.Aptos.SDK.Account.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.Account.#ctor(System.Byte[])
+  commentId: M:Mirage.Aptos.SDK.Account.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: Mirage.Aptos.SDK.Account
+  langs:
+  - csharp
+  - vb
+  name: Account(Byte[])
+  nameWithType: Account.Account(Byte[])
+  fullName: Mirage.Aptos.SDK.Account.Account(System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: AptosSDK/Src/Account.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: .ctor
+    path: ../AptosSDK/Src/Account.cs
+    startLine: 34
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nCreates new account instance.\n"
+  example: []
+  syntax:
+    content: public Account(byte[] privateKey)
+    parameters:
+    - id: privateKey
+      type: System.Byte[]
+      description: Private key from which account key pair will be generated.
+    content.vb: Public Sub New(privateKey As Byte())
+  overload: Mirage.Aptos.SDK.Account.#ctor*
+  nameWithType.vb: Account.Account(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.Account.Account(System.Byte())
+  name.vb: Account(Byte())
+- uid: Mirage.Aptos.SDK.Account.GetAddress
+  commentId: M:Mirage.Aptos.SDK.Account.GetAddress
+  id: GetAddress
+  parent: Mirage.Aptos.SDK.Account
+  langs:
+  - csharp
+  - vb
+  name: GetAddress()
+  nameWithType: Account.GetAddress()
+  fullName: Mirage.Aptos.SDK.Account.GetAddress()
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Account.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetAddress
+    path: ../AptosSDK/Src/Account.cs
+    startLine: 48
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nThis is the key by which Aptos account is referenced.\nIt is the 32-byte of the SHA-3 256 cryptographic hash\nof the public key(s) concatenated with a signature scheme identifier byte\n"
+  example: []
+  syntax:
+    content: public string GetAddress()
+    return:
+      type: System.String
+      description: Address associated with the given account.
+    content.vb: Public Function GetAddress As String
+  overload: Mirage.Aptos.SDK.Account.GetAddress*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.Account.Sign(System.Byte[])
+  commentId: M:Mirage.Aptos.SDK.Account.Sign(System.Byte[])
+  id: Sign(System.Byte[])
+  parent: Mirage.Aptos.SDK.Account
+  langs:
+  - csharp
+  - vb
+  name: Sign(Byte[])
+  nameWithType: Account.Sign(Byte[])
+  fullName: Mirage.Aptos.SDK.Account.Sign(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Account.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: Sign
+    path: ../AptosSDK/Src/Account.cs
+    startLine: 63
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nSigns specified `message` with account&apos;s private key\n"
+  example: []
+  syntax:
+    content: public byte[] Sign(byte[] message)
+    parameters:
+    - id: message
+      type: System.Byte[]
+      description: A message to sign.
+    return:
+      type: System.Byte[]
+      description: A signature byte array.
+    content.vb: Public Function Sign(message As Byte()) As Byte()
+  overload: Mirage.Aptos.SDK.Account.Sign*
+  nameWithType.vb: Account.Sign(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.Account.Sign(System.Byte())
+  name.vb: Sign(Byte())
+references:
+- uid: Mirage.Aptos.SDK
+  commentId: N:Mirage.Aptos.SDK
+  name: Mirage.Aptos.SDK
+  nameWithType: Mirage.Aptos.SDK
+  fullName: Mirage.Aptos.SDK
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Mirage.Aptos.SDK.Account.#ctor*
+  commentId: Overload:Mirage.Aptos.SDK.Account.#ctor
+  name: Account
+  nameWithType: Account.Account
+  fullName: Mirage.Aptos.SDK.Account.Account
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Mirage.Aptos.SDK.Account.GetAddress*
+  commentId: Overload:Mirage.Aptos.SDK.Account.GetAddress
+  name: GetAddress
+  nameWithType: Account.GetAddress
+  fullName: Mirage.Aptos.SDK.Account.GetAddress
+- uid: Mirage.Aptos.SDK.Account.Sign*
+  commentId: Overload:Mirage.Aptos.SDK.Account.Sign
+  name: Sign
+  nameWithType: Account.Sign
+  fullName: Mirage.Aptos.SDK.Account.Sign

@@ -1,0 +1,1243 @@
+### YamlMime:ManagedReference
+items:
+- uid: Mirage.Aptos.SDK.Client
+  commentId: T:Mirage.Aptos.SDK.Client
+  id: Client
+  parent: Mirage.Aptos.SDK
+  children:
+  - Mirage.Aptos.SDK.Client.#ctor(System.String,OpenAPIConfig)
+  - Mirage.Aptos.SDK.Client.GetAccountResource(System.String,System.String)
+  - Mirage.Aptos.SDK.Client.GetEventsByCreationNumber(System.String,System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  - Mirage.Aptos.SDK.Client.GetEventsByEventHandle(System.String,System.String,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  - Mirage.Aptos.SDK.Client.GetTableItem``1(System.String,TableItemRequest)
+  - Mirage.Aptos.SDK.Client.GetTransactionByHash(System.String)
+  - Mirage.Aptos.SDK.Client.PopulateRequestParams(SubmitTransaction,OptionalTransactionArgs)
+  - Mirage.Aptos.SDK.Client.SimulateTransaction(SubmitTransactionRequest,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  - Mirage.Aptos.SDK.Client.SubmitTransaction(SubmitTransactionRequest)
+  langs:
+  - csharp
+  - vb
+  name: Client
+  nameWithType: Client
+  fullName: Mirage.Aptos.SDK.Client
+  type: Class
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: Client
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 11
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nProvides methods for retrieving data from Aptos node.\n"
+  example: []
+  syntax:
+    content: public class Client
+    content.vb: Public Class Client
+  seealso:
+  - linkType: HRef
+    linkId: https://fullnode.devnet.aptoslabs.com/v1/spec
+    altText: https://fullnode.devnet.aptoslabs.com/v1/spec
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Mirage.Aptos.SDK.Client.#ctor(System.String,OpenAPIConfig)
+  commentId: M:Mirage.Aptos.SDK.Client.#ctor(System.String,OpenAPIConfig)
+  id: '#ctor(System.String,OpenAPIConfig)'
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: Client(String, OpenAPIConfig)
+  nameWithType: Client.Client(String, OpenAPIConfig)
+  fullName: Mirage.Aptos.SDK.Client.Client(System.String, OpenAPIConfig)
+  type: Constructor
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: .ctor
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 23
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nBuild a client configured to connect to an Aptos node at the given URL.\n"
+  example: []
+  syntax:
+    content: public Client(string nodeUrl, OpenAPIConfig config = null)
+    parameters:
+    - id: nodeUrl
+      type: System.String
+      description: URL of the Aptos Node API endpoint.
+    - id: config
+      type: OpenAPIConfig
+      description: Additional configuration options for the generated Axios client.
+    content.vb: Public Sub New(nodeUrl As String, config As OpenAPIConfig = Nothing)
+  overload: Mirage.Aptos.SDK.Client.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.Client.PopulateRequestParams(SubmitTransaction,OptionalTransactionArgs)
+  commentId: M:Mirage.Aptos.SDK.Client.PopulateRequestParams(SubmitTransaction,OptionalTransactionArgs)
+  id: PopulateRequestParams(SubmitTransaction,OptionalTransactionArgs)
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: PopulateRequestParams(SubmitTransaction, OptionalTransactionArgs)
+  nameWithType: Client.PopulateRequestParams(SubmitTransaction, OptionalTransactionArgs)
+  fullName: Mirage.Aptos.SDK.Client.PopulateRequestParams(SubmitTransaction, OptionalTransactionArgs)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: PopulateRequestParams
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 35
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public async Task PopulateRequestParams(SubmitTransaction transaction, OptionalTransactionArgs extraArgs = null)
+    parameters:
+    - id: transaction
+      type: SubmitTransaction
+    - id: extraArgs
+      type: OptionalTransactionArgs
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function PopulateRequestParams(transaction As SubmitTransaction, extraArgs As OptionalTransactionArgs = Nothing) As Task
+  overload: Mirage.Aptos.SDK.Client.PopulateRequestParams*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.Client.SubmitTransaction(SubmitTransactionRequest)
+  commentId: M:Mirage.Aptos.SDK.Client.SubmitTransaction(SubmitTransactionRequest)
+  id: SubmitTransaction(SubmitTransactionRequest)
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: SubmitTransaction(SubmitTransactionRequest)
+  nameWithType: Client.SubmitTransaction(SubmitTransactionRequest)
+  fullName: Mirage.Aptos.SDK.Client.SubmitTransaction(SubmitTransactionRequest)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: SubmitTransaction
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 52
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<PendingTransactionPayload> SubmitTransaction(SubmitTransactionRequest request)
+    parameters:
+    - id: request
+      type: SubmitTransactionRequest
+    return:
+      type: System.Threading.Tasks.Task{PendingTransactionPayload}
+    content.vb: Public Function SubmitTransaction(request As SubmitTransactionRequest) As Task(Of PendingTransactionPayload)
+  overload: Mirage.Aptos.SDK.Client.SubmitTransaction*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.Client.SimulateTransaction(SubmitTransactionRequest,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  commentId: M:Mirage.Aptos.SDK.Client.SimulateTransaction(SubmitTransactionRequest,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  id: SimulateTransaction(SubmitTransactionRequest,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: SimulateTransaction(SubmitTransactionRequest, Nullable<Boolean>, Nullable<Boolean>, Nullable<Boolean>)
+  nameWithType: Client.SimulateTransaction(SubmitTransactionRequest, Nullable<Boolean>, Nullable<Boolean>, Nullable<Boolean>)
+  fullName: Mirage.Aptos.SDK.Client.SimulateTransaction(SubmitTransactionRequest, System.Nullable<System.Boolean>, System.Nullable<System.Boolean>, System.Nullable<System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: SimulateTransaction
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 57
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<UserTransaction> SimulateTransaction(SubmitTransactionRequest requestBody, bool? estimateMaxGasAmount = null, bool? estimateGasUnitPrice = null, bool? estimatePrioritizedGasUnitPrice = null)
+    parameters:
+    - id: requestBody
+      type: SubmitTransactionRequest
+    - id: estimateMaxGasAmount
+      type: System.Nullable{System.Boolean}
+    - id: estimateGasUnitPrice
+      type: System.Nullable{System.Boolean}
+    - id: estimatePrioritizedGasUnitPrice
+      type: System.Nullable{System.Boolean}
+    return:
+      type: System.Threading.Tasks.Task{UserTransaction}
+    content.vb: Public Function SimulateTransaction(requestBody As SubmitTransactionRequest, estimateMaxGasAmount As Boolean? = Nothing, estimateGasUnitPrice As Boolean? = Nothing, estimatePrioritizedGasUnitPrice As Boolean? = Nothing) As Task(Of UserTransaction)
+  overload: Mirage.Aptos.SDK.Client.SimulateTransaction*
+  nameWithType.vb: Client.SimulateTransaction(SubmitTransactionRequest, Nullable(Of Boolean), Nullable(Of Boolean), Nullable(Of Boolean))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.Client.SimulateTransaction(SubmitTransactionRequest, System.Nullable(Of System.Boolean), System.Nullable(Of System.Boolean), System.Nullable(Of System.Boolean))
+  name.vb: SimulateTransaction(SubmitTransactionRequest, Nullable(Of Boolean), Nullable(Of Boolean), Nullable(Of Boolean))
+- uid: Mirage.Aptos.SDK.Client.GetTransactionByHash(System.String)
+  commentId: M:Mirage.Aptos.SDK.Client.GetTransactionByHash(System.String)
+  id: GetTransactionByHash(System.String)
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: GetTransactionByHash(String)
+  nameWithType: Client.GetTransactionByHash(String)
+  fullName: Mirage.Aptos.SDK.Client.GetTransactionByHash(System.String)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetTransactionByHash
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 72
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<TypedTransaction> GetTransactionByHash(string hash)
+    parameters:
+    - id: hash
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{TypedTransaction}
+    content.vb: Public Function GetTransactionByHash(hash As String) As Task(Of TypedTransaction)
+  overload: Mirage.Aptos.SDK.Client.GetTransactionByHash*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.Client.GetAccountResource(System.String,System.String)
+  commentId: M:Mirage.Aptos.SDK.Client.GetAccountResource(System.String,System.String)
+  id: GetAccountResource(System.String,System.String)
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: GetAccountResource(String, String)
+  nameWithType: Client.GetAccountResource(String, String)
+  fullName: Mirage.Aptos.SDK.Client.GetAccountResource(System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetAccountResource
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 77
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<MoveResource> GetAccountResource(string account, string resourceType)
+    parameters:
+    - id: account
+      type: System.String
+    - id: resourceType
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{MoveResource}
+    content.vb: Public Function GetAccountResource(account As String, resourceType As String) As Task(Of MoveResource)
+  overload: Mirage.Aptos.SDK.Client.GetAccountResource*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.Client.GetTableItem``1(System.String,TableItemRequest)
+  commentId: M:Mirage.Aptos.SDK.Client.GetTableItem``1(System.String,TableItemRequest)
+  id: GetTableItem``1(System.String,TableItemRequest)
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: GetTableItem<TReturn>(String, TableItemRequest)
+  nameWithType: Client.GetTableItem<TReturn>(String, TableItemRequest)
+  fullName: Mirage.Aptos.SDK.Client.GetTableItem<TReturn>(System.String, TableItemRequest)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetTableItem
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 82
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<TReturn> GetTableItem<TReturn>(string tableHandle, TableItemRequest requestBody)
+    parameters:
+    - id: tableHandle
+      type: System.String
+    - id: requestBody
+      type: TableItemRequest
+    typeParameters:
+    - id: TReturn
+    return:
+      type: System.Threading.Tasks.Task{{TReturn}}
+    content.vb: Public Function GetTableItem(Of TReturn)(tableHandle As String, requestBody As TableItemRequest) As Task(Of TReturn)
+  overload: Mirage.Aptos.SDK.Client.GetTableItem*
+  nameWithType.vb: Client.GetTableItem(Of TReturn)(String, TableItemRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.Client.GetTableItem(Of TReturn)(System.String, TableItemRequest)
+  name.vb: GetTableItem(Of TReturn)(String, TableItemRequest)
+- uid: Mirage.Aptos.SDK.Client.GetEventsByCreationNumber(System.String,System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  commentId: M:Mirage.Aptos.SDK.Client.GetEventsByCreationNumber(System.String,System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  id: GetEventsByCreationNumber(System.String,System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: GetEventsByCreationNumber(String, UInt64, Nullable<UInt64>, Nullable<UInt64>)
+  nameWithType: Client.GetEventsByCreationNumber(String, UInt64, Nullable<UInt64>, Nullable<UInt64>)
+  fullName: Mirage.Aptos.SDK.Client.GetEventsByCreationNumber(System.String, System.UInt64, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetEventsByCreationNumber
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 87
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<VersionedEvent> GetEventsByCreationNumber(string address, ulong creationNumber, ulong? start = null, ulong? limit = null)
+    parameters:
+    - id: address
+      type: System.String
+    - id: creationNumber
+      type: System.UInt64
+    - id: start
+      type: System.Nullable{System.UInt64}
+    - id: limit
+      type: System.Nullable{System.UInt64}
+    return:
+      type: System.Threading.Tasks.Task{VersionedEvent}
+    content.vb: Public Function GetEventsByCreationNumber(address As String, creationNumber As ULong, start As ULong? = Nothing, limit As ULong? = Nothing) As Task(Of VersionedEvent)
+  overload: Mirage.Aptos.SDK.Client.GetEventsByCreationNumber*
+  nameWithType.vb: Client.GetEventsByCreationNumber(String, UInt64, Nullable(Of UInt64), Nullable(Of UInt64))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.Client.GetEventsByCreationNumber(System.String, System.UInt64, System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64))
+  name.vb: GetEventsByCreationNumber(String, UInt64, Nullable(Of UInt64), Nullable(Of UInt64))
+- uid: Mirage.Aptos.SDK.Client.GetEventsByEventHandle(System.String,System.String,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  commentId: M:Mirage.Aptos.SDK.Client.GetEventsByEventHandle(System.String,System.String,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  id: GetEventsByEventHandle(System.String,System.String,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64})
+  parent: Mirage.Aptos.SDK.Client
+  langs:
+  - csharp
+  - vb
+  name: GetEventsByEventHandle(String, String, String, Nullable<UInt64>, Nullable<UInt64>)
+  nameWithType: Client.GetEventsByEventHandle(String, String, String, Nullable<UInt64>, Nullable<UInt64>)
+  fullName: Mirage.Aptos.SDK.Client.GetEventsByEventHandle(System.String, System.String, System.String, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/Client.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: GetEventsByEventHandle
+    path: ../AptosSDK/Src/Client/Client.cs
+    startLine: 102
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  syntax:
+    content: public Task<VersionedEvent> GetEventsByEventHandle(string address, string eventHandle, string fieldName, ulong? start = null, ulong? limit = null)
+    parameters:
+    - id: address
+      type: System.String
+    - id: eventHandle
+      type: System.String
+    - id: fieldName
+      type: System.String
+    - id: start
+      type: System.Nullable{System.UInt64}
+    - id: limit
+      type: System.Nullable{System.UInt64}
+    return:
+      type: System.Threading.Tasks.Task{VersionedEvent}
+    content.vb: Public Function GetEventsByEventHandle(address As String, eventHandle As String, fieldName As String, start As ULong? = Nothing, limit As ULong? = Nothing) As Task(Of VersionedEvent)
+  overload: Mirage.Aptos.SDK.Client.GetEventsByEventHandle*
+  nameWithType.vb: Client.GetEventsByEventHandle(String, String, String, Nullable(Of UInt64), Nullable(Of UInt64))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Mirage.Aptos.SDK.Client.GetEventsByEventHandle(System.String, System.String, System.String, System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64))
+  name.vb: GetEventsByEventHandle(String, String, String, Nullable(Of UInt64), Nullable(Of UInt64))
+references:
+- uid: Mirage.Aptos.SDK
+  commentId: N:Mirage.Aptos.SDK
+  name: Mirage.Aptos.SDK
+  nameWithType: Mirage.Aptos.SDK
+  fullName: Mirage.Aptos.SDK
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Mirage.Aptos.SDK.Client.#ctor*
+  commentId: Overload:Mirage.Aptos.SDK.Client.#ctor
+  name: Client
+  nameWithType: Client.Client
+  fullName: Mirage.Aptos.SDK.Client.Client
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: OpenAPIConfig
+  commentId: '!:OpenAPIConfig'
+  isExternal: true
+  name: OpenAPIConfig
+  nameWithType: OpenAPIConfig
+  fullName: OpenAPIConfig
+- uid: Mirage.Aptos.SDK.Client.PopulateRequestParams*
+  commentId: Overload:Mirage.Aptos.SDK.Client.PopulateRequestParams
+  name: PopulateRequestParams
+  nameWithType: Client.PopulateRequestParams
+  fullName: Mirage.Aptos.SDK.Client.PopulateRequestParams
+- uid: SubmitTransaction
+  commentId: '!:SubmitTransaction'
+  isExternal: true
+  name: SubmitTransaction
+  nameWithType: SubmitTransaction
+  fullName: SubmitTransaction
+- uid: OptionalTransactionArgs
+  isExternal: true
+  name: OptionalTransactionArgs
+  nameWithType: OptionalTransactionArgs
+  fullName: OptionalTransactionArgs
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Mirage.Aptos.SDK.Client.SubmitTransaction*
+  commentId: Overload:Mirage.Aptos.SDK.Client.SubmitTransaction
+  name: SubmitTransaction
+  nameWithType: Client.SubmitTransaction
+  fullName: Mirage.Aptos.SDK.Client.SubmitTransaction
+- uid: SubmitTransactionRequest
+  isExternal: true
+  name: SubmitTransactionRequest
+  nameWithType: SubmitTransactionRequest
+  fullName: SubmitTransactionRequest
+- uid: System.Threading.Tasks.Task{PendingTransactionPayload}
+  commentId: T:System.Threading.Tasks.Task{PendingTransactionPayload}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<PendingTransactionPayload>
+  nameWithType: Task<PendingTransactionPayload>
+  fullName: System.Threading.Tasks.Task<PendingTransactionPayload>
+  nameWithType.vb: Task(Of PendingTransactionPayload)
+  fullName.vb: System.Threading.Tasks.Task(Of PendingTransactionPayload)
+  name.vb: Task(Of PendingTransactionPayload)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: PendingTransactionPayload
+    name: PendingTransactionPayload
+    nameWithType: PendingTransactionPayload
+    fullName: PendingTransactionPayload
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: PendingTransactionPayload
+    name: PendingTransactionPayload
+    nameWithType: PendingTransactionPayload
+    fullName: PendingTransactionPayload
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.Client.SimulateTransaction*
+  commentId: Overload:Mirage.Aptos.SDK.Client.SimulateTransaction
+  name: SimulateTransaction
+  nameWithType: Client.SimulateTransaction
+  fullName: Mirage.Aptos.SDK.Client.SimulateTransaction
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
+  fullName: System.Nullable<System.Boolean>
+  nameWithType.vb: Nullable(Of Boolean)
+  fullName.vb: System.Nullable(Of System.Boolean)
+  name.vb: Nullable(Of Boolean)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{UserTransaction}
+  commentId: T:System.Threading.Tasks.Task{UserTransaction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<UserTransaction>
+  nameWithType: Task<UserTransaction>
+  fullName: System.Threading.Tasks.Task<UserTransaction>
+  nameWithType.vb: Task(Of UserTransaction)
+  fullName.vb: System.Threading.Tasks.Task(Of UserTransaction)
+  name.vb: Task(Of UserTransaction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: UserTransaction
+    name: UserTransaction
+    nameWithType: UserTransaction
+    fullName: UserTransaction
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: UserTransaction
+    name: UserTransaction
+    nameWithType: UserTransaction
+    fullName: UserTransaction
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.Client.GetTransactionByHash*
+  commentId: Overload:Mirage.Aptos.SDK.Client.GetTransactionByHash
+  name: GetTransactionByHash
+  nameWithType: Client.GetTransactionByHash
+  fullName: Mirage.Aptos.SDK.Client.GetTransactionByHash
+- uid: System.Threading.Tasks.Task{TypedTransaction}
+  commentId: T:System.Threading.Tasks.Task{TypedTransaction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TypedTransaction>
+  nameWithType: Task<TypedTransaction>
+  fullName: System.Threading.Tasks.Task<TypedTransaction>
+  nameWithType.vb: Task(Of TypedTransaction)
+  fullName.vb: System.Threading.Tasks.Task(Of TypedTransaction)
+  name.vb: Task(Of TypedTransaction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TypedTransaction
+    name: TypedTransaction
+    nameWithType: TypedTransaction
+    fullName: TypedTransaction
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TypedTransaction
+    name: TypedTransaction
+    nameWithType: TypedTransaction
+    fullName: TypedTransaction
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.Client.GetAccountResource*
+  commentId: Overload:Mirage.Aptos.SDK.Client.GetAccountResource
+  name: GetAccountResource
+  nameWithType: Client.GetAccountResource
+  fullName: Mirage.Aptos.SDK.Client.GetAccountResource
+- uid: System.Threading.Tasks.Task{MoveResource}
+  commentId: T:System.Threading.Tasks.Task{MoveResource}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<MoveResource>
+  nameWithType: Task<MoveResource>
+  fullName: System.Threading.Tasks.Task<MoveResource>
+  nameWithType.vb: Task(Of MoveResource)
+  fullName.vb: System.Threading.Tasks.Task(Of MoveResource)
+  name.vb: Task(Of MoveResource)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: MoveResource
+    name: MoveResource
+    nameWithType: MoveResource
+    fullName: MoveResource
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: MoveResource
+    name: MoveResource
+    nameWithType: MoveResource
+    fullName: MoveResource
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.Client.GetTableItem*
+  commentId: Overload:Mirage.Aptos.SDK.Client.GetTableItem
+  name: GetTableItem
+  nameWithType: Client.GetTableItem
+  fullName: Mirage.Aptos.SDK.Client.GetTableItem
+- uid: TableItemRequest
+  commentId: '!:TableItemRequest'
+  isExternal: true
+  name: TableItemRequest
+  nameWithType: TableItemRequest
+  fullName: TableItemRequest
+- uid: System.Threading.Tasks.Task{{TReturn}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TReturn>
+  nameWithType: Task<TReturn>
+  fullName: System.Threading.Tasks.Task<TReturn>
+  nameWithType.vb: Task(Of TReturn)
+  fullName.vb: System.Threading.Tasks.Task(Of TReturn)
+  name.vb: Task(Of TReturn)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TReturn
+    nameWithType: TReturn
+    fullName: TReturn
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TReturn
+    nameWithType: TReturn
+    fullName: TReturn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.Client.GetEventsByCreationNumber*
+  commentId: Overload:Mirage.Aptos.SDK.Client.GetEventsByCreationNumber
+  name: GetEventsByCreationNumber
+  nameWithType: Client.GetEventsByCreationNumber
+  fullName: Mirage.Aptos.SDK.Client.GetEventsByCreationNumber
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: System.Nullable{System.UInt64}
+  commentId: T:System.Nullable{System.UInt64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<UInt64>
+  nameWithType: Nullable<UInt64>
+  fullName: System.Nullable<System.UInt64>
+  nameWithType.vb: Nullable(Of UInt64)
+  fullName.vb: System.Nullable(Of System.UInt64)
+  name.vb: Nullable(Of UInt64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{VersionedEvent}
+  commentId: T:System.Threading.Tasks.Task{VersionedEvent}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<VersionedEvent>
+  nameWithType: Task<VersionedEvent>
+  fullName: System.Threading.Tasks.Task<VersionedEvent>
+  nameWithType.vb: Task(Of VersionedEvent)
+  fullName.vb: System.Threading.Tasks.Task(Of VersionedEvent)
+  name.vb: Task(Of VersionedEvent)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: VersionedEvent
+    name: VersionedEvent
+    nameWithType: VersionedEvent
+    fullName: VersionedEvent
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: VersionedEvent
+    name: VersionedEvent
+    nameWithType: VersionedEvent
+    fullName: VersionedEvent
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Mirage.Aptos.SDK.Client.GetEventsByEventHandle*
+  commentId: Overload:Mirage.Aptos.SDK.Client.GetEventsByEventHandle
+  name: GetEventsByEventHandle
+  nameWithType: Client.GetEventsByEventHandle
+  fullName: Mirage.Aptos.SDK.Client.GetEventsByEventHandle

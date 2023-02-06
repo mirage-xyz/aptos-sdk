@@ -1,0 +1,559 @@
+### YamlMime:ManagedReference
+items:
+- uid: Mirage.Aptos.SDK.FaucetClient
+  commentId: T:Mirage.Aptos.SDK.FaucetClient
+  id: FaucetClient
+  parent: Mirage.Aptos.SDK
+  children:
+  - Mirage.Aptos.SDK.FaucetClient.#ctor(System.String,Mirage.Aptos.SDK.Client)
+  - Mirage.Aptos.SDK.FaucetClient.FundAccount(Mirage.Aptos.SDK.Account,System.UInt32)
+  langs:
+  - csharp
+  - vb
+  name: FaucetClient
+  nameWithType: FaucetClient
+  fullName: Mirage.Aptos.SDK.FaucetClient
+  type: Class
+  source:
+    remote:
+      path: AptosSDK/Src/Client/FaucetClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: FaucetClient
+    path: ../AptosSDK/Src/Client/FaucetClient.cs
+    startLine: 9
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nClass for requesting tokens from faucet.\n"
+  example: []
+  syntax:
+    content: public class FaucetClient
+    content.vb: Public Class FaucetClient
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Mirage.Aptos.SDK.FaucetClient.#ctor(System.String,Mirage.Aptos.SDK.Client)
+  commentId: M:Mirage.Aptos.SDK.FaucetClient.#ctor(System.String,Mirage.Aptos.SDK.Client)
+  id: '#ctor(System.String,Mirage.Aptos.SDK.Client)'
+  parent: Mirage.Aptos.SDK.FaucetClient
+  langs:
+  - csharp
+  - vb
+  name: FaucetClient(String, Client)
+  nameWithType: FaucetClient.FaucetClient(String, Client)
+  fullName: Mirage.Aptos.SDK.FaucetClient.FaucetClient(System.String, Mirage.Aptos.SDK.Client)
+  type: Constructor
+  source:
+    remote:
+      path: AptosSDK/Src/Client/FaucetClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: .ctor
+    path: ../AptosSDK/Src/Client/FaucetClient.cs
+    startLine: 21
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nEstablishes a connection to Aptos node.\n"
+  example: []
+  syntax:
+    content: public FaucetClient(string faucetUrl, Client client)
+    parameters:
+    - id: faucetUrl
+      type: System.String
+      description: A faucet url.
+    - id: client
+      type: Mirage.Aptos.SDK.Client
+      description: The Aptos client.
+    content.vb: Public Sub New(faucetUrl As String, client As Client)
+  overload: Mirage.Aptos.SDK.FaucetClient.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Mirage.Aptos.SDK.FaucetClient.FundAccount(Mirage.Aptos.SDK.Account,System.UInt32)
+  commentId: M:Mirage.Aptos.SDK.FaucetClient.FundAccount(Mirage.Aptos.SDK.Account,System.UInt32)
+  id: FundAccount(Mirage.Aptos.SDK.Account,System.UInt32)
+  parent: Mirage.Aptos.SDK.FaucetClient
+  langs:
+  - csharp
+  - vb
+  name: FundAccount(Account, UInt32)
+  nameWithType: FaucetClient.FundAccount(Account, UInt32)
+  fullName: Mirage.Aptos.SDK.FaucetClient.FundAccount(Mirage.Aptos.SDK.Account, System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: AptosSDK/Src/Client/FaucetClient.cs
+      branch: feature/add-simlation
+      repo: https://github.com/mirage-xyz/aptos-sdk
+    id: FundAccount
+    path: ../AptosSDK/Src/Client/FaucetClient.cs
+    startLine: 34
+  assemblies:
+  - AptosSDK
+  namespace: Mirage.Aptos.SDK
+  summary: "\nThis creates an account if it does not exist and mints the specified amount of\ncoins into that account.\n"
+  example: []
+  syntax:
+    content: public async Task<TypedTransaction[]> FundAccount(Account account, uint amount)
+    parameters:
+    - id: account
+      type: Mirage.Aptos.SDK.Account
+      description: Aptos account witch mints tokens.
+    - id: amount
+      type: System.UInt32
+      description: Amount of tokens to mint.
+    return:
+      type: System.Threading.Tasks.Task{TypedTransaction[]}
+      description: Task with submitted transactions.
+    content.vb: Public Function FundAccount(account As Account, amount As UInteger) As Task(Of TypedTransaction())
+  overload: Mirage.Aptos.SDK.FaucetClient.FundAccount*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+references:
+- uid: Mirage.Aptos.SDK
+  commentId: N:Mirage.Aptos.SDK
+  name: Mirage.Aptos.SDK
+  nameWithType: Mirage.Aptos.SDK
+  fullName: Mirage.Aptos.SDK
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Mirage.Aptos.SDK.FaucetClient.#ctor*
+  commentId: Overload:Mirage.Aptos.SDK.FaucetClient.#ctor
+  name: FaucetClient
+  nameWithType: FaucetClient.FaucetClient
+  fullName: Mirage.Aptos.SDK.FaucetClient.FaucetClient
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Mirage.Aptos.SDK.Client
+  commentId: T:Mirage.Aptos.SDK.Client
+  parent: Mirage.Aptos.SDK
+  name: Client
+  nameWithType: Client
+  fullName: Mirage.Aptos.SDK.Client
+- uid: Mirage.Aptos.SDK.FaucetClient.FundAccount*
+  commentId: Overload:Mirage.Aptos.SDK.FaucetClient.FundAccount
+  name: FundAccount
+  nameWithType: FaucetClient.FundAccount
+  fullName: Mirage.Aptos.SDK.FaucetClient.FundAccount
+- uid: Mirage.Aptos.SDK.Account
+  commentId: T:Mirage.Aptos.SDK.Account
+  parent: Mirage.Aptos.SDK
+  name: Account
+  nameWithType: Account
+  fullName: Mirage.Aptos.SDK.Account
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: System.Threading.Tasks.Task{TypedTransaction[]}
+  commentId: T:System.Threading.Tasks.Task{TypedTransaction[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TypedTransaction[]>
+  nameWithType: Task<TypedTransaction[]>
+  fullName: System.Threading.Tasks.Task<TypedTransaction[]>
+  nameWithType.vb: Task(Of TypedTransaction())
+  fullName.vb: System.Threading.Tasks.Task(Of TypedTransaction())
+  name.vb: Task(Of TypedTransaction())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TypedTransaction
+    name: TypedTransaction
+    nameWithType: TypedTransaction
+    fullName: TypedTransaction
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TypedTransaction
+    name: TypedTransaction
+    nameWithType: TypedTransaction
+    fullName: TypedTransaction
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
